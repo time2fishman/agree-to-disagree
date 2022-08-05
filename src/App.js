@@ -3,6 +3,8 @@ import NavBar from './components/NavBar/NavBar';
 import StartPage from './components/StartPage/StartPage';
 import MainPage from './components/MainPage/MainPage';
 
+import PlayPage from './components/PlayPage/PlayPage'
+
 //Import React dependencies
 import { Route, Routes } from "react-router-dom";
 import { useState, createContext } from 'react';
@@ -35,7 +37,11 @@ function App() {
               <MainPage />
               </>
             } />
-            
+            <Route path="/play" element={
+              <>
+              <PlayPage />
+              </>
+            } />
           </Routes>
         </AppContext.Provider>
 
