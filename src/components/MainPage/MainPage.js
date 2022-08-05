@@ -13,20 +13,31 @@ const MainPage = () => {
     }
     =useContext(AppContext)
 
-    const [results, setResults] = useState([])
+    const [axiosResults, setAxiosResults] = useState([])
+    const [search, setSearch] = useState('')
+    const [searchArray, setSearchArray] = useState([])
 
     useEffect(()=>{
            axios.get('http://localhost:8000/foods/')
                 .then(response => {
-                    setResults(response.data)
+                    setAxiosResults(response.data)
                 })
                 .catch(console.error)
-                console.log(results)
     }, [])
 
+    useEffect(()=>{
+        if(search===''){
+            setSearchArray(axiosResults)
+        } else {
+            const runSearch = axiosResults.filter((item)=>{
+                return item.name.substring(0, search.length).toLowerCase()===search
+            })
+            setSearchArray(runSearch)
+        }
+    }, [axiosResults, search])
 
     function DisplayOptions(){
-        return results.map((item, index)=>{
+        return searchArray.map((item, index)=>{
             return(
                 <div key={index}>
                     <Option 
@@ -53,8 +64,7 @@ const MainPage = () => {
                 </div>
                 <form className='Add-food-container'>
                     <input className='food-input' type="text" placeholder='Type to add food...' onChange={(e)=>{
-                        
-                        console.log(e.target.value)
+                        setSearch(e.target.value)
                     }}></input>
                     <div className='orange-circle-small food-search'>+</div>
                 </form>
