@@ -22,10 +22,10 @@ const MainPage = () => {
                         <div className='orange-circle-small'>20</div>
                     </div>
                 </div>
-                <div className='Add-food-container'>
-                    <h4>Type to add food...</h4>
-                    <div className='orange-circle-small'>5</div>
-                </div>
+                <form className='Add-food-container'>
+                    <input className='food-input' type="text" placeholder='Type to add food...'></input>
+                    <div className='orange-circle-small food-search'>+</div>
+                </form>
             </div>
         </div>
     );
