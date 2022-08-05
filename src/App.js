@@ -2,6 +2,7 @@
 import NavBar from './components/NavBar/NavBar';
 import StartPage from './components/StartPage/StartPage';
 import MainPage from './components/MainPage/MainPage';
+import AboutPage from './components/AboutPage/AboutPage';
 
 //Import React dependencies
 import { Route, Routes } from "react-router-dom";
@@ -35,6 +36,7 @@ function App() {
               <MainPage />
               </>
             } />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </AppContext.Provider>
 
