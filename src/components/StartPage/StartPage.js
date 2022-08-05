@@ -9,12 +9,14 @@ const StartPage = () => {
 
     const [logoClassName, setLogoClassName] = useState('AgreeToDisagreeLogo')
     const [startButtonClassName, setStartButtonClassName] = useState('start-button')
-    const { navBarVisible, setNavBarVisible } = useContext(AppContext)
+    const { setNavBarVisible,
+            setMainPageVisible} = useContext(AppContext)
 
     function clickHandler(){
         setLogoClassName('AgreeToDisagreeLogo animated rollOut')
         setStartButtonClassName('start-button clicked')
         setNavBarVisible('NavBar-container')
+        setMainPageVisible('MainPage-main')
     }
 
 

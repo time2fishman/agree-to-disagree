@@ -48,7 +48,7 @@
 .start-button.clicked{
     opacity: 0;
     margin-right: 100%;
-    transition: 1000ms ease;
+    transition: 500ms ease;
 }
 
 /* Media Queries for Desktop*/
@@ -63,8 +63,8 @@
 /* Keyframes for additional anniamtion */
 
 .animated{
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
+    -webkit-animation-duration: 1500ms;
+    animation-duration: 1500ms;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
