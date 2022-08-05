@@ -30,13 +30,35 @@
     background-color: white;
     box-shadow: 0 0 5px 0 grey;
 }
+
+.aboutTitle {
+    display: flex;
+    /* border-bottom: 2px solid #545454; */
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+
+.aboutCredits {
+    display: flex;
+    flex-direction: row;  
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-basis: auto;
+}
+.aboutPictures {
+    height: 15vh;
+    border-radius: 500px;
+    box-shadow: 0 0 10px -3px grey;
+    margin-top: 1vh;
+    margin-right: 10vh;
+}
+.aboutPictures:hover {
+    opacity: 0.5;
+}
 li {
     list-style: none;
-    /* font-size: 18px; */
-}
-ul {
-    display: flex;
-    flex-direction: column;  
+
 }
 
 i {
