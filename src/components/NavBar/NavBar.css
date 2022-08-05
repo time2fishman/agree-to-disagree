@@ -9,7 +9,7 @@
     height: 60px;
     background-color: white;
     transition: 1000ms ease;
-    box-shadow: 0 0 5px 0 grey;
+    box-shadow: 0 0 10px -3px grey;
 }
 
 .NavBar-container.hidden{
