@@ -1,14 +1,75 @@
 .MainPage-main{
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    transition: 1500ms ease;
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: .15fr 2fr .15fr;
+}
+
+.MainPage-main.hidden{
+    top: 100%;
 }
 
 .MainPage-container{
     width: 100%;
     height: 100%;
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.Play-container{
+    border-radius: 20px;
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 0 10px -3px grey;
+    margin-bottom: 20px;
+}
+
+.orange-circle-container{
+    /* border:solid; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.orange-circle-small{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    color: white;
+    height: 50px;
+    width: 50px;
+    background-color: #da7e05;
+    border-radius: 50%;
+    font-size: large;
+    font-weight: 600;
+    box-shadow: 0 0 10px -2px grey;
 }
+
+.Add-food-container{
+    border-radius: 20px;
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 0 10px -3px grey;
+    margin-bottom: 30px;
+    color: grey;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.Add-food-container h4{
+    align-self: center;
+}
+
