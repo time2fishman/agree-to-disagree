@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../AppContext';
+import '../Option/Option'
 import './PlayPage.css'
-
-
 
 const PlayPage = () => {
 
