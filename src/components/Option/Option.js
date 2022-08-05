@@ -1,7 +1,7 @@
 import React from 'react';
 import './Option.css'
 
-const Option = ({name, image, description}) => {
+const Option = ({name, image, description, cuisine}) => {
     return (
         <div className='Option-container'>
             <div className='Option-name-container'>

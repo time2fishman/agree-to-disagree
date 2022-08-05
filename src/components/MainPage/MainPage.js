@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../AppContext';
 import Option from '../Option/Option';
 import './MainPage.css'
@@ -12,8 +13,20 @@ const MainPage = () => {
     }
     =useContext(AppContext)
 
+    const [results, setResults] = useState([])
+
+    useEffect(()=>{
+           axios.get('http://localhost:8000/foods/')
+                .then(response => {
+                    setResults(response.data)
+                })
+                .catch(console.error)
+                console.log(results)
+    }, [])
+
+
     function DisplayOptions(){
-        return seeds.map((item, index)=>{
+        return results.map((item, index)=>{
             return(
                 <div key={index}>
                     <Option 
@@ -39,7 +52,10 @@ const MainPage = () => {
                     </div>
                 </div>
                 <form className='Add-food-container'>
-                    <input className='food-input' type="text" placeholder='Type to add food...'></input>
+                    <input className='food-input' type="text" placeholder='Type to add food...' onChange={(e)=>{
+                        
+                        console.log(e.target.value)
+                    }}></input>
                     <div className='orange-circle-small food-search'>+</div>
                 </form>
                 <div className='Display-container'>
