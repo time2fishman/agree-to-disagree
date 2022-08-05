@@ -1,13 +1,13 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../../AppContext';
 import './PlayPage.css'
 
 
 const PlayPage = () => {
-
     const { navBarVisible, setNavBarVisible } = useContext(AppContext)
-
+    
     setNavBarVisible('NavBar-container')
+
 
     return (
         <div className='container'>
