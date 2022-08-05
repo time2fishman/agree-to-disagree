@@ -1,0 +1,78 @@
+.Option-container{
+    height: 100px;
+    width: 100px;
+    margin: 9px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px -1px grey;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+img.Option-image{
+    height: 100px;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.Option-name-container{
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    z-index: 1;
+    color: white;
+    width: 100px;
+}
+
+.Option-name{
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #1d1d1d;
+    text-align: center;
+    padding: 2px 0px;
+}
+
+@media screen and (min-width: 700px) {
+    .Option-container{
+        height: 150px;
+        width: 150px;
+        margin: 15px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 10px -1px grey;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+    }
+    
+    img.Option-image{
+        height: 150px;
+        grid-row: 1;
+        grid-column: 1;
+    }
+    
+    .Option-name-container{
+        grid-row: 1;
+        grid-column: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        z-index: 1;
+        color: white;
+        width: 150px;
+    }
+    
+    .Option-name{
+        width: 150px;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #1d1d1d;
+        text-align: center;
+        padding: 2px 0px;
+    }
+    
+}

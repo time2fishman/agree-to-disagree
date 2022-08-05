@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../AppContext';
+import Option from '../Option/Option';
 import './MainPage.css'
+import seeds from './seeds.json'
 
 
 const MainPage = () => {
@@ -9,6 +11,20 @@ const MainPage = () => {
         mainPageVisible, setMainPageVisible
     }
     =useContext(AppContext)
+
+    function DisplayOptions(){
+        return seeds.map((item, index)=>{
+            return(
+                <div key={index}>
+                    <Option 
+                        name={item.name}
+                        image={item.image}
+                        cuisine={item.cuisine}
+                        description={item.description}/>
+                </div>
+            )
+        })
+    }
 
     return (
         <div className={mainPageVisible}>
@@ -26,6 +42,9 @@ const MainPage = () => {
                     <input className='food-input' type="text" placeholder='Type to add food...'></input>
                     <div className='orange-circle-small food-search'>+</div>
                 </form>
+                <div className='Display-container'>
+                    {DisplayOptions()}
+                </div>
             </div>
         </div>
     );
