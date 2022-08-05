@@ -1,17 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../AppContext';
 import './PlayPage.css'
 
 
-const PlayPage = () => {
-    const { navBarVisible, setNavBarVisible } = useContext(AppContext)
-    
-    setNavBarVisible('NavBar-container')
 
+const PlayPage = () => {
+
+    const { navBarVisible, setNavBarVisible } = useContext(AppContext)
+
+    useEffect(() => {
+        setNavBarVisible('NavBar-container')
+        console.log("testing")
+    })
 
     return (
-        <div className='container'>
-            <div>test</div>
+        <div className='playPage-main'>
+            <div className='playPage-background'></div>
+            <div className='playPage-container'>
+                <div className='info-box'>
+                    <h2>Decision Maker 1:</h2>
+                    <p>Delete your least desired option</p>
+                </div>
+                <div className='choose-one'>
+                    <div className='food-choice'>Pizza</div>
+                    <div className='food-choice'>Hotdog</div>
+                </div>
+            </div>
         </div>
     )
 }
