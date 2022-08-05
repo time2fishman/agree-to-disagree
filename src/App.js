@@ -2,7 +2,7 @@
 import NavBar from './components/NavBar/NavBar';
 import StartPage from './components/StartPage/StartPage';
 import MainPage from './components/MainPage/MainPage';
-
+import AboutPage from './components/AboutPage/AboutPage'
 import PlayPage from './components/PlayPage/PlayPage'
 
 //Import React dependencies
@@ -37,15 +37,11 @@ function App() {
               <MainPage />
               </>
             } />
-            <Route path="/play" element={
-              <>
-              <PlayPage />
-              </>
-            } />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/play" element={<PlayPage />} />
           </Routes>
         </AppContext.Provider>
 
-        
       <img className='sparkle-two' src={sparkles} alt='Sparkle to add depth' />
     </div>
   );
