@@ -21,7 +21,10 @@ const MainPage = () => {
                         <div className='orange-circle-small'>10</div>
                         <div className='orange-circle-small'>20</div>
                     </div>
-
+                </div>
+                <div className='Add-food-container'>
+                    <h4>Type to add food...</h4>
+                    <div className='orange-circle-small'>5</div>
                 </div>
             </div>
         </div>
