@@ -16,6 +16,7 @@
 }
 
 .AboutPage-container{
+    font-size: 22px;
     width: 100%;
     height: 50%;
     grid-row: 2;
@@ -27,11 +28,11 @@
     /* border: 1px solid blue; */
     border-radius: 20px;
     background-color: white;
+    box-shadow: 0 0 5px 0 grey;
 }
-
 li {
     list-style: none;
-    font-size: 28px;
+    /* font-size: 18px; */
 }
 ul {
     display: flex;
@@ -40,6 +41,9 @@ ul {
 
 i {
     cursor: pointer;
+}
+i:hover {
+    opacity: 0.5;
 }
 a {
     text-decoration: none;
