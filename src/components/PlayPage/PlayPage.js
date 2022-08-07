@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../AppContext';
-import '../Option/Option'
 import './PlayPage.css'
+import remove from '../../images/removeItem.svg'
 
 const PlayPage = () => {
 
@@ -12,6 +12,10 @@ const PlayPage = () => {
         console.log("testing")
     })
 
+    const handleClick = () => {
+        alert("are you sure you want to delete this food?")
+    }
+
     return (
         <div className='playPage-main'>
             <div className='playPage-background'></div>
@@ -21,8 +25,14 @@ const PlayPage = () => {
                     <p>Delete your least desired option</p>
                 </div>
                 <div className='choose-one'>
-                    <div className='food-choice'>Pizza</div>
-                    <div className='food-choice'>Hotdog</div>
+                    <div className='food-choice'>
+                        <p>pizza</p>
+                        <img onClick={handleClick} className='delete-button' src={remove} alt='Remove Button' />
+                    </div>
+                    <div className='food-choice'>
+                        <p>hotdog</p>
+                        <img onClick={handleClick} className='delete-button' src={remove} alt='Remove Button' />
+                    </div>
                 </div>
             </div>
         </div>
