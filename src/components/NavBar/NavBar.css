@@ -24,4 +24,94 @@
     height: 100px;
 }
 
+.dropList {
+    display: flex;
+    flex-direction: column;
+    margin-top: -60px;
+    list-style: square;
+    position: absolute;
+    left: 95vw;
+    top: 7vh;
+    align-content: flex-start;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.navDots {
+    margin-left: 35px;
+}
+#dot1 {
+    position: relative;
+    top: 10px;
+}
+#dot3 {
+    position: relative;
+    bottom: 10px;
+}
+.hiddenMenu {
+    display: none;
+    transition-duration: 500ms;
+}
+.dropList:hover {
+    opacity: .5;
+    transition: all 0.5s ease;
+    list-style: circle;
+}
+.dropList:hover #dot1 {
+    display: none;
+}
+.dropList:hover #dot3 {
+    display: none;
+}
+.dropList:hover #dot2 {
+    font-size: 50px;
+}
 
+.dropFields {
+    list-style: none;
+    position: absolute;
+    left: 94vw;
+    top: 5vh;
+    margin: auto;
+    transition-duration: 500ms;
+    
+}
+.dropFields li {
+    background-color: white;
+    box-shadow: 0 0 10px -3px grey;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2px;
+    min-width: 8vw;
+    
+}
+.dropFields li:hover {
+    border: 2px solid gray;
+}
+
+.dropMenuContainer {
+    height: 6vh;
+    width: 6vw;
+    margin-left: -6vw;
+    margin-top: 2vh;
+    box-shadow: 0 0 10px -3px grey;
+    background-color: white;
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1299px) {
+    .dropList {
+        left: 91vw;
+    }
+    .dropFields {
+        left: 90vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .dropList {
+        left: 80vw;
+    }
+    .dropFields {
+        left: 79vw;
+    }
+}

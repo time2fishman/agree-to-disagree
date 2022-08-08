@@ -5,11 +5,15 @@ import './AboutPage.css'
 const AboutPage = () => {
 
     const {
-        navBarVisible, setNavBarVisible
+        navBarVisible, setNavBarVisible,
+        setLogoClassName,
+        setStartButtonClassName
     }
     =useContext(AppContext)
     
     setNavBarVisible('NavBar-container')
+    setLogoClassName('AgreeToDisagreeLogo animated rollOut hiddenLogo')
+    setStartButtonClassName('start-button clicked')
 
 
     return (

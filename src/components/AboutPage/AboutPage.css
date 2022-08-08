@@ -38,6 +38,9 @@
     margin-top: 5vh;
 }
 
+.hiddenLogo {
+    display: none;
+}
 
 .aboutCredits {
     display: flex;
@@ -46,6 +49,7 @@
     justify-content: space-around;
     flex-basis: auto;
     font-size: 17px;
+    list-style: none;
 }
 .aboutPictures {
     display: flex;
@@ -57,10 +61,6 @@
 }
 .aboutPictures:hover {
     opacity: 0.5;
-}
-li {
-    list-style: none;
-
 }
 
 i {
