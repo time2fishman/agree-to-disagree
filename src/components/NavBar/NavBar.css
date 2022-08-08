@@ -27,14 +27,13 @@
 .dropList {
     display: flex;
     flex-direction: column;
-    margin-top: -60px;
+    margin-top: -70px;
     list-style: square;
     position: absolute;
     left: 95vw;
     top: 7vh;
     align-content: flex-start;
     cursor: pointer;
-    transition: all 0.5s ease;
 }
 .navDots {
     margin-left: 35px;
