@@ -21,6 +21,8 @@ function App() {
   const [navBarVisible, setNavBarVisible] = useState('NavBar-container hidden')
   const [mainPageVisible, setMainPageVisible] = useState('MainPage-main hidden')
   const [playArray, setPlayArray] = useState([])
+  const [logoClassName, setLogoClassName] = useState('AgreeToDisagreeLogo')
+  const [startButtonClassName, setStartButtonClassName] = useState('start-button')
 
   //Return routes
   return (
@@ -29,7 +31,9 @@ function App() {
         <AppContext.Provider value={
           {navBarVisible, setNavBarVisible,
           mainPageVisible, setMainPageVisible,
-          playArray, setPlayArray}
+          playArray, setPlayArray,
+          logoClassName, setLogoClassName,
+          startButtonClassName, setStartButtonClassName}
         }>
           <NavBar />
           <Routes>

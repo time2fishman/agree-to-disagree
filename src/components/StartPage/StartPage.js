@@ -2,15 +2,15 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
 import agreeToDisagreeLogo from '../../images/agreeToDisagreeLogo.png';
-import './StartPage.css';
+import './StartPage.css'
 
 
 const StartPage = () => {
-
-    const [logoClassName, setLogoClassName] = useState('AgreeToDisagreeLogo')
-    const [startButtonClassName, setStartButtonClassName] = useState('start-button')
     const { setNavBarVisible,
-            setMainPageVisible} = useContext(AppContext)
+            setMainPageVisible,
+            logoClassName, setLogoClassName,
+            startButtonClassName, setStartButtonClassName
+            } = useContext(AppContext)
 
     function clickHandler(){
         setLogoClassName('AgreeToDisagreeLogo animated rollOut')
