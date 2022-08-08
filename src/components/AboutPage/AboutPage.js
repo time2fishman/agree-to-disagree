@@ -12,7 +12,7 @@ const AboutPage = () => {
     =useContext(AppContext)
     
     setNavBarVisible('NavBar-container')
-    setLogoClassName('AgreeToDisagreeLogo animated rollOut hidden')
+    setLogoClassName('AgreeToDisagreeLogo animated rollOut hiddenLogo')
     setStartButtonClassName('start-button clicked')
 
 

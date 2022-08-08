@@ -38,6 +38,9 @@
     margin-top: 5vh;
 }
 
+.hiddenLogo {
+    display: none;
+}
 
 .aboutCredits {
     display: flex;

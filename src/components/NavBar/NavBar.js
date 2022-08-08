@@ -27,9 +27,12 @@ const NavBar = () => {
                     <li className='navDots'  id='dot2'></li>
                     <li className='navDots'  id='dot3'></li>
                 </ul>
-                <ul className={isActive ? 'hidden': 'dropFields'}>
+                <ul className={isActive ? 'hiddenMenu': 'dropFields'}>
+                    <div className='dropMenuContainer'>
                     <Link to='/*'><li>Home</li></Link>
                     <Link to='/about'><li>About</li></Link>
+                    </div>
+                   
                     </ul>
                 </div>
                 
