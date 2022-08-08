@@ -1,15 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../AppContext';
 import './PlayPage.css';
 import remove from '../../images/remove.svg'
+import Option from '../Option/Option';
 
 const PlayPage = () => {
 
-    const { navBarVisible, setNavBarVisible } = useContext(AppContext)
-
+    const [incrementor, setIncrementor] = useState(1)
+    const { playArray, navBarVisible, setNavBarVisible } = useContext(AppContext)
+    console.log(playArray)
     useEffect(() => {
         setNavBarVisible('NavBar-container')
-        console.log("testing")
     })
 
     const handleClick = () => {
@@ -26,15 +27,28 @@ const PlayPage = () => {
                     </div>
                     <div className='choose-one'>
                         <div className='food-choice'>
-                            <img className='food' src='https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='pizza pic' />
+                            <Option
+                                name={playArray[0].name}
+                                image={playArray[0].image}
+                                cuisine={playArray[0].cuisine}
+                                description={playArray[0].description}
+                            />
                             <img onClick={handleClick} className='delete-button' src={remove} alt='Remove Button' />
                         </div>
                         <div className='food-choice'>
-                            <img className='food' src='https://images.pexels.com/photos/4113455/pexels-photo-4113455.jpeg?auto=compress&cs=tinysrgb&w=600' alt='hot dog pic' />
+                            <Option
+                                name={playArray[1].name}
+                                image={playArray[1].image}
+                                cuisine={playArray[1].cuisine}
+                                description={playArray[1].description}
+                            />
                             <img onClick={handleClick} className='delete-button' src={remove} alt='Remove Button' />
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className='counter'>
+                <h2>1/{playArray.length}</h2>
             </div>
         </div>
     )
