@@ -9,7 +9,6 @@ const PlayPage = () => {
 
     useEffect(() => {
         setNavBarVisible('NavBar-container')
-        console.log("testing")
     })
 
     const handleClick = () => {

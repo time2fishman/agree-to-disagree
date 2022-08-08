@@ -17,12 +17,16 @@ const MainPage = () => {
 
     const [axiosResults, setAxiosResults] = useState([])
     const [search, setSearch] = useState('')
+    const [cuisine, setCuisine] = useState('')
+    const [description, setDescription] = useState('')
+    const [imageUrl, setImageUrl] = useState('')
     const [searchArray, setSearchArray] = useState([])
 
     useEffect(()=>{
            axios.get('https://agree-to-disagree.herokuapp.com/foods')
                 .then(response => {
                     setAxiosResults(response.data)
+                    console.log("fetch")
                 })
                 .catch(console.error)
     }, [])
@@ -35,7 +39,7 @@ const MainPage = () => {
             setSearchArray(axiosResults)
         } else {
             const runSearch = axiosResults.filter((item)=>{
-                return item.name.substring(0, search.length).toLowerCase()===search
+                return item.name.substring(0, search.length).toLowerCase()===search.toLowerCase()
             })
             setSearchArray(runSearch)
         }
@@ -67,12 +71,33 @@ const MainPage = () => {
         }, 1000);
     }
 
+    function addToDatabase(){
+        if(search.length < 1 || cuisine.length<1 || description.length<1 || imageUrl<1){
+            alert('Please fill out all boxes to proceed!')
+        } else {
+            axios.post('https://agree-to-disagree.herokuapp.com/foods', {
+                name: search,
+                image: imageUrl,
+                cuisine: cuisine,
+                description: description
+            })
+                .then()
+                .catch(console.error)
+            alert(`Added ${search} to databse!`)
+            setSearch('')
+            setCuisine('')
+            setDescription('')
+            setImageUrl('')
+        }
+
+    }
+
     return (
         <div className={mainPageVisible}>
             <div className='MainPage-container'>
                 <div className='Play-container'>
                     <h3>Play</h3><br></br>
-                    <h4>Select a number below to start! Add additional instruction text here...</h4><br></br>
+                    <h4>Are you and your partner having a tough time deciding what to eat? Grab your partner and select a number below to play. We will help you decide what to eat :)</h4><br></br>
                     <div className='orange-circle-container'>
                         <div to="/play" 
                             className='orange-circle-small'
@@ -91,10 +116,42 @@ const MainPage = () => {
                     </div>
                 </div>
                 <form className='Add-food-container'>
-                    <input className='food-input' type="text" placeholder='Type to add food...' onChange={(e)=>{
-                        setSearch(e.target.value)
-                    }}></input>
-                    <div className='orange-circle-small food-search'>+</div>
+                    <h3>Add</h3>
+                    <br></br>
+                    <h4>Take a peek below to see the databse of food options. If there are any missing, please add a new meal by completing boxes below!</h4>
+                    <br></br>
+                    <div className='Add-food-text-row'>
+                        <input id="search" className='food-input' type="text" placeholder='Add food name...' 
+                        value={search}
+                        onChange={(e)=>{
+                            setSearch(e.target.value)
+                        }}></input>
+                        <div className='orange-circle-small food-search' onClick={()=>{
+                            addToDatabase();
+                        }}>+</div>
+                    </div>
+                    <div className='Add-food-text-row'>
+                        <input id="cuisine" 
+                        value={cuisine}
+                        className='food-input' type="text" placeholder='Add cuisine...' onChange={(e)=>{
+                            setCuisine(e.target.value)
+                        }}></input>
+                    </div>
+                    <div className='Add-food-text-row'>
+                        <input id="description" 
+                        value={description}
+                        className='food-input' type="text" placeholder='Add description...' onChange={(e)=>{
+                            setDescription(e.target.value)
+                        }}></input>
+                    </div>
+                    <div className='Add-food-text-row'>
+                        <input id="imageUrl" 
+                        value={imageUrl}
+                        className='food-input' type="text" placeholder='Add image url...' onChange={(e)=>{
+                            setImageUrl(e.target.value)
+                        }}></input>
+                    </div>
+                    
                 </form>
                 <div className='Display-container'>
                     {DisplayOptions()}

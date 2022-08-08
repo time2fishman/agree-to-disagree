@@ -56,6 +56,11 @@
     box-shadow: 0 0 10px -2px grey;
 }
 
+.orange-circle-small:hover{
+    opacity: .5;
+    cursor: pointer;
+}
+
 .Add-food-container{
     border-radius: 20px;
     width: 100%;
@@ -63,21 +68,32 @@
     background-color: white;
     box-shadow: 0 0 10px -3px grey;
     margin-bottom: 30px;
-    color: grey;
+}
+
+.Add-food-text-row{
+    height: 40px;
+    padding: 2px 0;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 10px 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .food-input{
     line-height: 1;
     font-size: 18px;
     font-weight: 500;
+    width: 80%;
     margin: 0;
     padding: 0;
     color: grey;
     font-family: 'Open Sans', sans-serif;
     border: none;
+    border-radius: 0;
+    border-bottom: solid;
+    background-color: transparent;
 }
 
 .orange-circle-small.food-search{
