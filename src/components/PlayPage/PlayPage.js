@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../AppContext';
-import './PlayPage.css'
-import remove from '../../images/removeItem.svg'
+import './PlayPage.css';
+import remove from '../../images/remove.svg'
 
 const PlayPage = () => {
 
@@ -18,45 +18,26 @@ const PlayPage = () => {
 
     return (
         <div className='playPage-main'>
-            <div className='playPage-background'></div>
-            <div className='playPage-container'>
-                <div className='info-box'>
-                    <h2>Decision Maker 1:</h2>
-                    <p>Delete your least desired option</p>
-                </div>
-                <div className='choose-one'>
-                    <div className='food-choice'>
-                        <p>pizza</p>
-                        <img onClick={handleClick} className='delete-button' src={remove} alt='Remove Button' />
+            <div className='playPage-background'>
+                <div className='playPage-container'>
+                    <div className='info-box'>
+                        <h2>Decision Maker 1:</h2>
+                        <p>Delete your least desired option</p>
                     </div>
-                    <div className='food-choice'>
-                        <p>hotdog</p>
-                        <img onClick={handleClick} className='delete-button' src={remove} alt='Remove Button' />
+                    <div className='choose-one'>
+                        <div className='food-choice'>
+                            <img className='food' src='https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='pizza pic' />
+                            <img onClick={handleClick} className='delete-button' src={remove} alt='Remove Button' />
+                        </div>
+                        <div className='food-choice'>
+                            <img className='food' src='https://images.pexels.com/photos/4113455/pexels-photo-4113455.jpeg?auto=compress&cs=tinysrgb&w=600' alt='hot dog pic' />
+                            <img onClick={handleClick} className='delete-button' src={remove} alt='Remove Button' />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
-
-// return (
-//     <div className={mainPageVisible}>
-//         <div className='MainPage-container'>
-//             <div className='Play-container'>
-//                 <h3>Play</h3><br></br>
-//                 <h4>Select a number below to start! Add additional instruction text here...</h4><br></br>
-//                 <div className='orange-circle-container'>
-//                     <div className='orange-circle-small'>5</div>
-//                     <div className='orange-circle-small'>10</div>
-//                     <div className='orange-circle-small'>20</div>
-//                 </div>
-//             </div>
-//             <div className='Add-food-container'>
-//                 <h4>Type to add food...</h4>
-//                 <div className='orange-circle-small'>5</div>
-//             </div>
-//         </div>
-//     </div>
-// );
 
 export default PlayPage;
