@@ -48,13 +48,13 @@
     bottom: 10px;
 }
 .hiddenMenu {
-    display: none;
-    transition-duration: 500ms;
+    visibility: hidden;
 }
 .dropList:hover {
     opacity: .5;
     transition: all 0.5s ease;
-    list-style: circle;
+    list-style: square;
+    margin-left: 1vw;
 }
 .dropList:hover #dot1 {
     display: none;
@@ -67,6 +67,7 @@
 }
 
 .dropFields {
+    visibility: visible;
     list-style: none;
     position: absolute;
     left: 94vw;
