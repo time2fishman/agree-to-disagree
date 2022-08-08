@@ -6,15 +6,20 @@ import Option from '../Option/Option';
 
 const PlayPage = () => {
 
+    const [leftChoice, setLeftChoice] = useState(0)
+    const [rightChoice, setRightChoice] = useState(1)
     const [incrementor, setIncrementor] = useState(1)
     const { playArray, navBarVisible, setNavBarVisible } = useContext(AppContext)
     console.log(playArray)
+
     useEffect(() => {
         setNavBarVisible('NavBar-container')
     })
 
-    const handleClick = () => {
-        alert("are you sure you want to delete this food?")
+    const handleClick = (choiceSelected, setChoiceSelected) => {
+        setChoiceSelected(incrementor + 1)
+        setIncrementor(previous => previous + 1)
+        // alert(`Deleting ${choiceSelected}`)
     }
 
     return (
@@ -28,27 +33,27 @@ const PlayPage = () => {
                     <div className='choose-one'>
                         <div className='food-choice'>
                             <Option
-                                name={playArray[0].name}
-                                image={playArray[0].image}
-                                cuisine={playArray[0].cuisine}
-                                description={playArray[0].description}
+                                name={playArray[leftChoice].name}
+                                image={playArray[leftChoice].image}
+                                cuisine={playArray[leftChoice].cuisine}
+                                description={playArray[leftChoice].description}
                             />
-                            <img onClick={handleClick} className='delete-button' src={remove} alt='Remove Button' />
+                            <img onClick={() => handleClick(leftChoice, setLeftChoice)} className='delete-button' src={remove} alt='Remove Button' />
                         </div>
                         <div className='food-choice'>
                             <Option
-                                name={playArray[1].name}
-                                image={playArray[1].image}
-                                cuisine={playArray[1].cuisine}
-                                description={playArray[1].description}
+                                name={playArray[rightChoice].name}
+                                image={playArray[rightChoice].image}
+                                cuisine={playArray[rightChoice].cuisine}
+                                description={playArray[rightChoice].description}
                             />
-                            <img onClick={handleClick} className='delete-button' src={remove} alt='Remove Button' />
+                            <img onClick={() => handleClick(rightChoice, setRightChoice)} className='delete-button' src={remove} alt='Remove Button' />
                         </div>
                     </div>
                 </div>
             </div>
             <div className='counter'>
-                <h2>1/{playArray.length}</h2>
+                <h2>{incrementor + 1}/{playArray.length}</h2>
             </div>
         </div>
     )
