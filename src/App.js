@@ -20,6 +20,7 @@ function App() {
   //Set state
   const [navBarVisible, setNavBarVisible] = useState('NavBar-container hidden')
   const [mainPageVisible, setMainPageVisible] = useState('MainPage-main hidden')
+  const [playArray, setPlayArray] = useState([])
 
   //Return routes
   return (
@@ -27,7 +28,8 @@ function App() {
       <img className='sparkle-one' src={sparkles} alt='Sparkle to add depth' />
         <AppContext.Provider value={
           {navBarVisible, setNavBarVisible,
-          mainPageVisible, setMainPageVisible}
+          mainPageVisible, setMainPageVisible,
+          playArray, setPlayArray}
         }>
           <NavBar />
           <Routes>

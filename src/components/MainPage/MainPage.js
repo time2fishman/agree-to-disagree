@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
 import Option from '../Option/Option';
 import './MainPage.css'
@@ -9,7 +10,8 @@ import seeds from './seeds.json'
 const MainPage = () => {
 
     const {
-        mainPageVisible, setMainPageVisible
+        mainPageVisible, setMainPageVisible,
+        playArray, setPlayArray
     }
     =useContext(AppContext)
 
@@ -18,14 +20,17 @@ const MainPage = () => {
     const [searchArray, setSearchArray] = useState([])
 
     useEffect(()=>{
-           axios.get('http://localhost:8000/foods/')
+           axios.get('https://agree-to-disagree.herokuapp.com/foods')
                 .then(response => {
                     setAxiosResults(response.data)
                 })
                 .catch(console.error)
     }, [])
 
+
+
     useEffect(()=>{
+
         if(search===''){
             setSearchArray(axiosResults)
         } else {
@@ -50,6 +55,18 @@ const MainPage = () => {
         })
     }
 
+    const navigate = useNavigate()
+
+    function createPlayArray(count){
+        const shuffled = [...searchArray].sort(()=>0.5 - Math.random());
+        const shortened = shuffled.splice(0, count)
+        setPlayArray(shortened)
+        setMainPageVisible('MainPage-main hidden')
+        setTimeout(() => {
+            navigate('/play', {replace: true})
+        }, 1000);
+    }
+
     return (
         <div className={mainPageVisible}>
             <div className='MainPage-container'>
@@ -57,9 +74,20 @@ const MainPage = () => {
                     <h3>Play</h3><br></br>
                     <h4>Select a number below to start! Add additional instruction text here...</h4><br></br>
                     <div className='orange-circle-container'>
-                        <div className='orange-circle-small'>5</div>
-                        <div className='orange-circle-small'>10</div>
-                        <div className='orange-circle-small'>20</div>
+                        <div to="/play" 
+                            className='orange-circle-small'
+                            onClick={()=>{
+                                createPlayArray(5)
+                            }}>5</div>
+
+                        <div className='orange-circle-small'
+                            onClick={()=>{
+                                createPlayArray(10)
+                            }}>10</div>
+                        <div className='orange-circle-small'
+                            onClick={()=>{
+                                createPlayArray(20)
+                            }}>20</div>
                     </div>
                 </div>
                 <form className='Add-food-container'>
