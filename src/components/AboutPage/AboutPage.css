@@ -64,6 +64,7 @@ i:active {
 }
 i:hover {
     color: #da7e05;
+    transition-duration: 200ms;
 }
 a {
     text-decoration: none;
@@ -92,23 +93,29 @@ a {
 .mikeAbout:hover > .mikeName {
     color: black;
     opacity: 100%;
+    transition-duration: 200ms;
 }
 .mikeAbout:hover > .aboutPictures {
     opacity: 30%;
+    transition-duration: 200ms;
 }
 .adamAbout:hover > .adamName {
     color: black;
     opacity: 100%;
+    transition-duration: 200ms;
 }
 .adamAbout:hover > .aboutPictures {
     opacity: 30%;
+    transition-duration: 200ms;
 }
 .travisAbout:hover > .travisName {
     color: black;
     opacity: 100%;
+    transition-duration: 200ms;
 }
 .travisAbout:hover > .aboutPictures {
     opacity: 30%;
+    transition-duration: 200ms;
 }
 .aboutIcons {
     margin-top: 8vh;
