@@ -37,12 +37,8 @@ function App() {
         }>
           <NavBar />
           <Routes>
-            <Route path="/*" element={
-              <>
-              <StartPage />
-              <MainPage />
-              </>
-            } />
+            <Route path="/*" element={<StartPage />} />
+            <Route path="/home" element={<MainPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/play" element={<PlayPage />} />
           </Routes>
