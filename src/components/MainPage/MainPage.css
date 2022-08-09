@@ -151,3 +151,11 @@
 .displayNone{
     display: none;
 }
+
+.MainPage-container h4{
+    line-height: normal;
+}
+
+br{
+    height: 100px;
+}
