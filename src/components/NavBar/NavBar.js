@@ -23,7 +23,7 @@ const NavBar = () => {
                 <img className='handShake-icon' src={handShake} alt="handshake icon" />
                 <div className='dropMenu'>
                 <ul className='dropList' onClick={menuToggle}>
-                <i className='menuBars' class="fa-solid fa-bars"></i>
+                <i className='menuBars fa-solid fa-bars'></i>
                 </ul>
                 <ul className={isActive ? 'hiddenMenu': 'dropFields'}>
                     <div className='dropMenuContainer'>

@@ -56,6 +56,10 @@
     box-shadow: 0 0 10px -2px grey;
 }
 
+.orange-circle-small:active{
+    transform: scale(1.1);
+}
+
 .orange-circle-small:hover{
     opacity: .5;
     cursor: pointer;
@@ -99,6 +103,7 @@
 .orange-circle-small.food-search{
     grid-area: 1 / 3;
     font-size: 35px;
+    z-index: 1;
 }
 
 .Display-container{
@@ -112,6 +117,33 @@
     margin-top: 15px;
 }
 
-.down-triangle{
-    margin-top: 5px;
+.Add-food-instructions{
+    position: sticky;
+    z-index: 1;
+    background-color: white;
+}
+
+.down-triangle-open{
+    /* margin-top: 5px; */
+    transition: 1000ms ease;
+    z-index: 1;
+}
+
+.down-triangle-closed{
+    transform: rotate(90deg);
+    transition: 1000ms ease;
+    z-index: 1;
+}
+
+.Add-inputs-open{
+    transition: 500ms ease;
+    opacity: 1;
+    z-index: -1;
+}
+
+.Add-inputs-closed{
+    transition: 500ms ease;
+    margin-top: -170px;
+    opacity: 0;
+    z-index: -1;
 }
