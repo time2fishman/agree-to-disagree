@@ -82,7 +82,9 @@
     grid-template-columns: 1fr 10px 50px;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-content: flex-end;
 }
 
 .food-input{
@@ -98,6 +100,8 @@
     border-radius: 0;
     border-bottom: solid;
     background-color: transparent;
+    height: 30px;
+    margin-top: auto;
 }
 
 .orange-circle-small.food-search{
@@ -143,7 +147,7 @@
     transition: 500ms ease;
     z-index: -1;
     opacity: 0;
-    margin-top: -180px;
+    margin-top: -198px;
 }
 
 .Add-inputs.open{
