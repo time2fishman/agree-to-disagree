@@ -9,8 +9,8 @@ const PlayPage = () => {
     const [leftChoice, setLeftChoice] = useState(0)
     const [rightChoice, setRightChoice] = useState(1)
     const [incrementor, setIncrementor] = useState(1)
+
     const { playArray, navBarVisible, setNavBarVisible } = useContext(AppContext)
-    console.log(playArray)
 
     useEffect(() => {
         setNavBarVisible('NavBar-container')
@@ -19,7 +19,6 @@ const PlayPage = () => {
     const handleClick = (choiceSelected, setChoiceSelected) => {
         setChoiceSelected(incrementor + 1)
         setIncrementor(previous => previous + 1)
-        // alert(`Deleting ${choiceSelected}`)
     }
 
     return (
@@ -27,8 +26,10 @@ const PlayPage = () => {
             <div className='playPage-background'>
                 <div className='playPage-container'>
                     <div className='info-box'>
-                        <h2>Decision Maker 1:</h2>
-                        <p>Delete your least desired option</p>
+                        <h2>Alternate Players:</h2>
+                        <p><strong>Player 1</strong> - Delete your least desired option</p>
+                        <p><strong>Player 2</strong> - Delete your least desired option</p>
+                        <p><strong>Repeat</strong> until all options have been filtered</p>
                     </div>
                     <div className='choose-one'>
                         <div className='food-choice'>
