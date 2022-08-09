@@ -10,10 +10,14 @@ import seeds from './seeds.json'
 const MainPage = () => {
 
     const {
+        setNavBarVisible,
         mainPageVisible, setMainPageVisible,
-        playArray, setPlayArray
+        setPlayArray
     }
     =useContext(AppContext)
+
+    setNavBarVisible('NavBar-container')
+    setMainPageVisible('MainPage-main')
 
     const [axiosResults, setAxiosResults] = useState([])
     const [search, setSearch] = useState('')
@@ -116,7 +120,16 @@ const MainPage = () => {
                     </div>
                 </div>
                 <form className='Add-food-container'>
-                    <h3>Add</h3>
+                    <div className='Add-food-text-row'>
+                        <h3 className='Add-text'>Add</h3>
+                        <div className='orange-circle-small food-search' onClick={()=>{
+
+                        }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="down-triangle" viewBox="0 0 16 16">
+                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                            </svg>
+                        </div>
+                    </div>
                     <br></br>
                     <h4>Take a peek below to see the databse of food options. If there are any missing, please add a new meal by completing boxes below!</h4>
                     <br></br>

@@ -1,22 +1,24 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
 import agreeToDisagreeLogo from '../../images/agreeToDisagreeLogo.png';
 import './StartPage.css'
 
 
 const StartPage = () => {
-    const { setNavBarVisible,
-            setMainPageVisible,
-            logoClassName, setLogoClassName,
-            startButtonClassName, setStartButtonClassName
-            } = useContext(AppContext)
+    const { 
+        logoClassName, setLogoClassName,
+        startButtonClassName, setStartButtonClassName
+        } = useContext(AppContext)
+
+    const navigate = useNavigate();
 
     function clickHandler(){
         setLogoClassName('AgreeToDisagreeLogo animated rollOut')
         setStartButtonClassName('start-button clicked')
-        setNavBarVisible('NavBar-container')
-        setMainPageVisible('MainPage-main')
+        setTimeout(() => {
+            navigate('/home', {replace: true})
+        }, 750);
     }
 
 
