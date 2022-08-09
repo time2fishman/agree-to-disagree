@@ -142,16 +142,14 @@
 .Add-inputs{
     transition: 500ms ease;
     z-index: -1;
-    margin-top: -180px;
-    padding: 0;
     opacity: 0;
+    margin-top: -180px;
 }
 
 .Add-inputs.open{
     opacity: 1;
     z-index: -1;
-    margin: 0;
-    padding: 0;
+    margin-top: 15px;
 }
 
 .displayNone{
