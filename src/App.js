@@ -25,6 +25,8 @@ function App() {
   const [logoClassName, setLogoClassName] = useState('AgreeToDisagreeLogo')
   const [startButtonClassName, setStartButtonClassName] = useState('start-button')
   const [finalResult, setFinalResult] = useState()
+  const [editModal, setEditModal] = useState()
+  const [editModalClass, setEditModalClass] = useState('EditModal-container EMChidden')
 
   //Return routes
   return (
@@ -37,8 +39,9 @@ function App() {
           playArray, setPlayArray,
           logoClassName, setLogoClassName,
           startButtonClassName, setStartButtonClassName,
-          finalResult, setFinalResult
-        }
+          finalResult, setFinalResult,
+          editModal, setEditModal,
+          editModalClass, setEditModalClass}
       }>
         <NavBar />
         <Routes>

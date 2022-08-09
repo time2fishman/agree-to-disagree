@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
+import EditModal from '../EditModal/EditModal';
 import Option from '../Option/Option';
 import './MainPage.css'
 import seeds from './seeds.json'
@@ -12,7 +13,8 @@ const MainPage = () => {
     const {
         setNavBarVisible,
         mainPageVisible, setMainPageVisible,
-        setPlayArray
+        setPlayArray,
+        editModal
     }
     =useContext(AppContext)
 
@@ -37,7 +39,7 @@ const MainPage = () => {
                     console.log("fetch")
                 })
                 .catch(console.error)
-    }, [])
+    }, [editModal])
 
     useEffect(()=>{
 
@@ -50,7 +52,7 @@ const MainPage = () => {
             setSearchArray(runSearch)
         }
     }, [axiosResults, search])
-
+    
     function DisplayOptions(){
         return searchArray.map((item, index)=>{
             return(
@@ -59,7 +61,8 @@ const MainPage = () => {
                         name={item.name}
                         image={item.image}
                         cuisine={item.cuisine}
-                        description={item.description}/>
+                        description={item.description}
+                        id={item._id}/>
                 </div>
             )
         })
@@ -191,6 +194,7 @@ const MainPage = () => {
                 </form>
                 <div className='Display-container'>
                     {DisplayOptions()}
+                    {editModal}
                 </div>
             </div>
         </div>
