@@ -23,14 +23,12 @@ const NavBar = () => {
                 <img className='handShake-icon' src={handShake} alt="handshake icon" />
                 <div className='dropMenu'>
                 <ul className='dropList' onClick={menuToggle}>
-                    <li className='navDots' id='dot1'></li>
-                    <li className='navDots'  id='dot2'></li>
-                    <li className='navDots'  id='dot3'></li>
+                <i className='menuBars' class="fa-solid fa-bars"></i>
                 </ul>
                 <ul className={isActive ? 'hiddenMenu': 'dropFields'}>
                     <div className='dropMenuContainer'>
-                    <Link to='/*'><li>Home</li></Link>
-                    <Link to='/about'><li>About</li></Link>
+                    <Link onClick={menuToggle} to='/*'><li>Home</li></Link>
+                    <Link onClick={menuToggle} to='/about'><li>About</li></Link>
                     </div>
                    
                     </ul>
