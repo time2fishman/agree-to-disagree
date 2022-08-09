@@ -3,6 +3,7 @@ import { AppContext } from '../../AppContext';
 import './PlayPage.css';
 import remove from '../../images/remove.svg'
 import Option from '../Option/Option';
+import { useNavigate } from 'react-router-dom';
 
 const PlayPage = () => {
 
@@ -10,15 +11,30 @@ const PlayPage = () => {
     const [rightChoice, setRightChoice] = useState(1)
     const [incrementor, setIncrementor] = useState(1)
 
-    const { playArray, navBarVisible, setNavBarVisible } = useContext(AppContext)
+    const { finalResult, setFinalResult, playArray, navBarVisible, setNavBarVisible } = useContext(AppContext)
+    const navigate = useNavigate();
 
+    
     useEffect(() => {
         setNavBarVisible('NavBar-container')
     })
 
+    useEffect(() => {
+        console.log(finalResult)
+    }, [finalResult])
+    
     const handleClick = (choiceSelected, setChoiceSelected) => {
-        setChoiceSelected(incrementor + 1)
-        setIncrementor(previous => previous + 1)
+        if (incrementor + 1 === playArray.length) {
+            setFinalResult(
+                choiceSelected === leftChoice ? rightChoice : leftChoice
+            )
+            setTimeout(() => {
+                navigate('/results', {replace: true})
+            }, 750);
+        } else {
+            setChoiceSelected(incrementor + 1)
+            setIncrementor(previous => previous + 1)
+        }
     }
 
     return (

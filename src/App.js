@@ -4,6 +4,7 @@ import StartPage from './components/StartPage/StartPage';
 import MainPage from './components/MainPage/MainPage';
 import AboutPage from './components/AboutPage/AboutPage'
 import PlayPage from './components/PlayPage/PlayPage'
+import ResultsPage from './components/ResultsPage/ResultsPage';
 
 //Import React dependencies
 import { Route, Routes } from "react-router-dom";
@@ -23,26 +24,31 @@ function App() {
   const [playArray, setPlayArray] = useState([])
   const [logoClassName, setLogoClassName] = useState('AgreeToDisagreeLogo')
   const [startButtonClassName, setStartButtonClassName] = useState('start-button')
+  const [finalResult, setFinalResult] = useState()
 
   //Return routes
   return (
     <div className='App'>
       <img className='sparkle-one' src={sparkles} alt='Sparkle to add depth' />
-        <AppContext.Provider value={
-          {navBarVisible, setNavBarVisible,
+      <AppContext.Provider value={
+        {
+          navBarVisible, setNavBarVisible,
           mainPageVisible, setMainPageVisible,
           playArray, setPlayArray,
           logoClassName, setLogoClassName,
-          startButtonClassName, setStartButtonClassName}
-        }>
-          <NavBar />
-          <Routes>
-            <Route path="/*" element={<StartPage />} />
-            <Route path="/home" element={<MainPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/play" element={<PlayPage />} />
-          </Routes>
-        </AppContext.Provider>
+          startButtonClassName, setStartButtonClassName,
+          finalResult, setFinalResult
+        }
+      }>
+        <NavBar />
+        <Routes>
+          <Route path="/*" element={<StartPage />} />
+          <Route path="/home" element={<MainPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/play" element={<PlayPage />} />
+          <Route path="/results" element={<ResultsPage />} />
+        </Routes>
+      </AppContext.Provider>
 
       <img className='sparkle-two' src={sparkles} alt='Sparkle to add depth' />
     </div>
