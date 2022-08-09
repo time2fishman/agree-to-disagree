@@ -143,7 +143,11 @@
 
 .Add-inputs-closed{
     transition: 500ms ease;
-    margin-top: -170px;
+    margin-top: -176px;
     opacity: 0;
     z-index: -1;
+}
+
+.displayNone{
+    display: none;
 }
