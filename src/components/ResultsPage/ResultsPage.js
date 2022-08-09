@@ -17,7 +17,7 @@ const ResultsPage = () => {
             <div className='resultsPage-background'>
                 <div className='resultsPage-container'>
                     <div className='results-info-box'>
-                        <h2>The universe has spoken! Somebody's eatin' some "{chosenFood}"!</h2>
+                        <h2>The universe has spoken! Somebody's eatin' {chosenFood}!</h2>
                     </div>
                     <div className='food-result'>
                         <Option
