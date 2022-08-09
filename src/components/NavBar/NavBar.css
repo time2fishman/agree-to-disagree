@@ -115,7 +115,7 @@
         left: 75vw;
     }
     .dropFields li {
-        min-width: 1vw;
+        min-width: 15vw;
     }
 }
 @media only screen and (min-width:500px) and (max-width: 699px) {
