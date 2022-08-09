@@ -87,11 +87,15 @@
     align-content: flex-end;
 }
 
+.Add-food-text-row.add-plus{
+    justify-content: center;
+}
+
 .food-input{
     line-height: 1;
     font-size: 18px;
     font-weight: 500;
-    width: 80%;
+    width: 100%;
     margin: 0;
     padding: 0;
     color: grey;
@@ -109,6 +113,15 @@
     font-size: 35px;
     z-index: 1;
     margin: 0;
+    height: 30px;
+    width: 30px;
+    font-size: x-large;
+    margin-top: 10px;
+}
+
+
+.orange-circle-small.food-search span{
+    margin: auto;
 }
 
 .Display-container{
@@ -147,7 +160,7 @@
     transition: 500ms ease;
     z-index: -1;
     opacity: 0;
-    margin-top: -198px;
+    margin-top: -231px;
 }
 
 .Add-inputs.open{
@@ -162,4 +175,9 @@
 
 .MainPage-container h4{
     line-height: normal;
+}
+
+.MainPage-main h3{
+    font-size: 20px;
+    margin-bottom: 5px;
 }

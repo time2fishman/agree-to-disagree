@@ -122,7 +122,7 @@ const MainPage = () => {
             <div className='MainPage-container'>
                 <div className='Play-container'>
                     <h3>Play</h3>
-                    <h4>Are you and your partner having a tough time deciding what to eat? Grab your partner and select a number below to play. We will help you decide :)</h4>
+                    <h4>Are you and your partner having a tough time deciding what to eat? Let us help you! To get started, select how many options you'd like to choose from below.</h4>
                     <div className='orange-circle-container'>
                         <div to="/play" 
                             className='orange-circle-small'
@@ -132,26 +132,25 @@ const MainPage = () => {
 
                         <div className='orange-circle-small'
                             onClick={()=>{
-                                createPlayArray(10)
-                            }}>10</div>
+                                createPlayArray(15)
+                            }}>15</div>
                         <div className='orange-circle-small'
                             onClick={()=>{
-                                createPlayArray(20)
-                            }}>20</div>
+                                createPlayArray(25)
+                            }}>25</div>
                     </div>
                 </div>
                 <form className='Add-food-container'>
                     <div className='Add-food-instructions'>
-                        <h4>Take a peek below to see the database of food options. If there are any missing, please add a new meal by clicking the orange triangle button below!</h4>
+                        <h3>Foods</h3>
+                        <h4>Take a peek below to see available food options. Don't see your favorite? Add it below!</h4>
                         
-                        <div className='Add-food-text-row'>
-                            <h3 className='Add-text'>Add</h3>
+                        <div className='Add-food-text-row add-plus'>
+                            <h4 className='Add-text'>Add New Item &nbsp;&nbsp; </h4>
                             <div className='orange-circle-small food-search' onClick={()=>{
                                 addMenuClicked()
                             }}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className={addArrow} viewBox="0 0 16 16">
-                                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                </svg>
+                                <span>+</span>
                             </div>
                         </div>
                     </div>
@@ -164,9 +163,6 @@ const MainPage = () => {
                             onChange={(e)=>{
                                 setSearch(e.target.value)
                             }}></input>
-                            <div className='orange-circle-small food-search' onClick={()=>{
-                                addToDatabase();
-                            }}>+</div>
                         </div>
                         <div className='Add-food-text-row'>
                             <input id="cuisine" 
@@ -188,6 +184,11 @@ const MainPage = () => {
                             className='food-input' type="text" placeholder='Add image url...' onChange={(e)=>{
                                 setImageUrl(e.target.value)
                             }}></input>
+                            <div className='orange-circle-small submit-button' onClick={()=>{
+                            addToDatabase();
+                                }}>
+                                    Submit
+                                </div>
                         </div>
                     </div>
                     
