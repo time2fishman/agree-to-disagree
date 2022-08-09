@@ -16,8 +16,10 @@ const MainPage = () => {
     }
     =useContext(AppContext)
 
-    setNavBarVisible('NavBar-container')
-    setMainPageVisible('MainPage-main')
+    useEffect(()=>{
+        setNavBarVisible('NavBar-container')
+        setMainPageVisible('MainPage-main')
+    },[])
 
     const [axiosResults, setAxiosResults] = useState([])
     const [search, setSearch] = useState('')
@@ -25,6 +27,8 @@ const MainPage = () => {
     const [description, setDescription] = useState('')
     const [imageUrl, setImageUrl] = useState('')
     const [searchArray, setSearchArray] = useState([])
+    const [addInputs, setAddInputs] = useState('Add-inputs-closed')
+    const [addArrow, setAddArrow] = useState('down-triangle-closed')
 
     useEffect(()=>{
            axios.get('https://agree-to-disagree.herokuapp.com/foods')
@@ -34,8 +38,6 @@ const MainPage = () => {
                 })
                 .catch(console.error)
     }, [])
-
-
 
     useEffect(()=>{
 
@@ -96,6 +98,16 @@ const MainPage = () => {
 
     }
 
+    function addMenuClicked(){
+        if(addArrow==='down-triangle-closed'){
+            setAddArrow('down-triangle-open')
+            setAddInputs('Add-inputs-open')
+        } else {
+            setAddArrow('down-triangle-closed')
+            setAddInputs('Add-inputs-closed')
+        }
+    }
+
     return (
         <div className={mainPageVisible}>
             <div className='MainPage-container'>
@@ -120,49 +132,53 @@ const MainPage = () => {
                     </div>
                 </div>
                 <form className='Add-food-container'>
-                    <div className='Add-food-text-row'>
-                        <h3 className='Add-text'>Add</h3>
-                        <div className='orange-circle-small food-search' onClick={()=>{
-
-                        }}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="down-triangle" viewBox="0 0 16 16">
-                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                            </svg>
+                    <div className='Add-food-instructions'>
+                        <h4>Take a peek below to see the databse of food options. If there are any missing, please add a new meal by completing boxes below!</h4>
+                        <br></br>
+                        <div className='Add-food-text-row'>
+                            <h3 className='Add-text'>Add</h3>
+                            <div className='orange-circle-small food-search' onClick={()=>{
+                                addMenuClicked()
+                            }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className={addArrow} viewBox="0 0 16 16">
+                                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                     <br></br>
-                    <h4>Take a peek below to see the databse of food options. If there are any missing, please add a new meal by completing boxes below!</h4>
-                    <br></br>
-                    <div className='Add-food-text-row'>
-                        <input id="search" className='food-input' type="text" placeholder='Add food name...' 
-                        value={search}
-                        onChange={(e)=>{
-                            setSearch(e.target.value)
-                        }}></input>
-                        <div className='orange-circle-small food-search' onClick={()=>{
-                            addToDatabase();
-                        }}>+</div>
-                    </div>
-                    <div className='Add-food-text-row'>
-                        <input id="cuisine" 
-                        value={cuisine}
-                        className='food-input' type="text" placeholder='Add cuisine...' onChange={(e)=>{
-                            setCuisine(e.target.value)
-                        }}></input>
-                    </div>
-                    <div className='Add-food-text-row'>
-                        <input id="description" 
-                        value={description}
-                        className='food-input' type="text" placeholder='Add description...' onChange={(e)=>{
-                            setDescription(e.target.value)
-                        }}></input>
-                    </div>
-                    <div className='Add-food-text-row'>
-                        <input id="imageUrl" 
-                        value={imageUrl}
-                        className='food-input' type="text" placeholder='Add image url...' onChange={(e)=>{
-                            setImageUrl(e.target.value)
-                        }}></input>
+                    <div className={addInputs}>
+                        <div className='Add-food-text-row'>
+                            <input id="search" className='food-input' type="text" placeholder='Add food name...' 
+                            value={search}
+                            onChange={(e)=>{
+                                setSearch(e.target.value)
+                            }}></input>
+                            <div className='orange-circle-small food-search' onClick={()=>{
+                                addToDatabase();
+                            }}>+</div>
+                        </div>
+                        <div className='Add-food-text-row'>
+                            <input id="cuisine" 
+                            value={cuisine}
+                            className='food-input' type="text" placeholder='Add cuisine...' onChange={(e)=>{
+                                setCuisine(e.target.value)
+                            }}></input>
+                        </div>
+                        <div className='Add-food-text-row'>
+                            <input id="description" 
+                            value={description}
+                            className='food-input' type="text" placeholder='Add description...' onChange={(e)=>{
+                                setDescription(e.target.value)
+                            }}></input>
+                        </div>
+                        <div className='Add-food-text-row'>
+                            <input id="imageUrl" 
+                            value={imageUrl}
+                            className='food-input' type="text" placeholder='Add image url...' onChange={(e)=>{
+                                setImageUrl(e.target.value)
+                            }}></input>
+                        </div>
                     </div>
                     
                 </form>
