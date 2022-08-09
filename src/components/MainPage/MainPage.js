@@ -100,11 +100,17 @@ const MainPage = () => {
 
     function addMenuClicked(){
         if(addArrow==='down-triangle-closed'){
+            setAddInputs('Add-inputs-closed')
+            setTimeout(() => {
+                setAddInputs('Add-inputs-open')
+            }, 1);
             setAddArrow('down-triangle-open')
-            setAddInputs('Add-inputs-open')
         } else {
             setAddArrow('down-triangle-closed')
             setAddInputs('Add-inputs-closed')
+            setTimeout(() => {
+                setAddInputs('Add-inputs-closed displayNone')
+            }, 750);
         }
     }
 
