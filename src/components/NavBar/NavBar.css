@@ -30,6 +30,7 @@
     align-self: center;
     margin-right: 10px;
     font-size: 36px;
+    color: #da7e05;
 }
 
 .menuBars-icon:hover {
@@ -53,20 +54,21 @@
     transition: all 0.5s ease;  
 }
 .dropFields li {
-    
+    border-radius: 5px;
     background-color: white;
     transition-duration: 500ms;
     box-shadow: 0 0 25px -3px grey;
     font-size: 20px;
     text-align: center;
     padding: 2px;
-    color: #da7e05;
+    color: #545454;
     font-family: 'Arima Madurai', cursive;
     font-weight: 700;
+    margin: 2.5px;
     
 }
 .dropFields li:hover {
-    border: 2px outset gray;
+    border: 2px outset #545454;
     transition-duration: 200ms;
     background-color: #da7e05;
     color: white;
@@ -75,27 +77,29 @@
 .dropMenuContainer {
     border-radius: 5px;
     margin-left: -6vw;
-    margin-top: 2vh;
-    box-shadow: 0 0 10px -3px grey;
-    background-color: #545454;
-    height: 7.5vh;
-    padding: 5px;
+    margin-top: 3vh;
+    /* box-shadow: 0 0 10px -3px grey; */
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 8vh;
+    padding: 5.5px;
+    min-height: 78px;
+    min-width: 55px;
     
 }
 
 @media only screen and (min-width: 701px) and (max-width: 1299px) {
     .dropMenuContainer {
-        margin-left: -6vw;
+        margin-left: -8vw;
+        height: 8vh;
+        padding: 5px;
     }
     
     .dropFields {
-        margin-left: 8vw;
-    }
-    .dropFields {
+        margin-left: 8.5vw;
         left: 90vw;
     }
     .dropFields li {
-        min-width: 7vw;
+        min-width: 6vw;
         max-width: 12vw;
     }
 }
@@ -105,17 +109,28 @@
         margin-left: 6vw;
         margin-top: 3vh;
         max-width: 15vw;
+        height: 8.5vh;
     }
     .dropFields {
-        left: 79vw;
+        left: 75vw;
     }
     .dropFields li {
-        min-width: 14vw;
+        min-width: 1vw;
     }
 }
-
-@media only screen and (max-height: 700px) {
+@media only screen and (min-width:500px) and (max-width: 699px) {
+    .dropFields {
+        left: 81vw;
+    }
+}
+@media only screen and (max-height: 700px) and (max-width: 300px) {
     .dropMenuContainer {
         margin-top: 5vh;
+    }
+    .dropFields li {
+        width: 18vw;
+    }
+    .dropFields {
+        left: 70vw;
     }
 }
