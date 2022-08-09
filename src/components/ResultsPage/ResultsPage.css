@@ -7,7 +7,7 @@
     overflow: hidden;
     transition: 1500ms ease;
     display: grid;
-    grid-template-rows: 1fr  5fr .6fr;
+    grid-template-rows: 1fr 5fr .6fr;
     grid-template-columns: .15fr 2fr .15fr;
 }
 
@@ -24,22 +24,56 @@
     grid-column: 2;
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-start;
+    align-content: center;
     justify-content: center;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .results-info-box {
-    display: flex;
     align-items: center;
     padding: 1em;
-    margin-top: 7%;
+    margin: 7% 7% 10% 7%;
     text-align: center;
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 0 10px -1px grey;
 }
 
-.food-result {
-    display: block;
+.food-result .Option-container {
+    height: 250px;
+    width: 250px;
+    margin: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px -1px grey;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
 
+.food-result img.Option-image {
+    height: 250px;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.food-result .Option-name-container {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    z-index: 1;
+    color: white;
+    width: 250px;
+}
+
+.food-result .Option-name {
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #1d1d1d;
+    text-align: center;
+    padding: 4px;
 }
