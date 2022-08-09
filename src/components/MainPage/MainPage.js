@@ -27,7 +27,7 @@ const MainPage = () => {
     const [description, setDescription] = useState('')
     const [imageUrl, setImageUrl] = useState('')
     const [searchArray, setSearchArray] = useState([])
-    const [addInputs, setAddInputs] = useState('Add-inputs-closed')
+    const [addInputs, setAddInputs] = useState('Add-inputs')
     const [addArrow, setAddArrow] = useState('down-triangle-closed')
 
     useEffect(()=>{
@@ -100,16 +100,16 @@ const MainPage = () => {
 
     function addMenuClicked(){
         if(addArrow==='down-triangle-closed'){
-            setAddInputs('Add-inputs-closed')
+            setAddInputs('Add-inputs')
             setTimeout(() => {
-                setAddInputs('Add-inputs-open')
+                setAddInputs('Add-inputs open')
             }, 1);
             setAddArrow('down-triangle-open')
         } else {
             setAddArrow('down-triangle-closed')
-            setAddInputs('Add-inputs-closed')
+            setAddInputs('Add-inputs')
             setTimeout(() => {
-                setAddInputs('Add-inputs-closed displayNone')
+                setAddInputs('Add-inputs displayNone')
             }, 750);
         }
     }
@@ -118,8 +118,8 @@ const MainPage = () => {
         <div className={mainPageVisible}>
             <div className='MainPage-container'>
                 <div className='Play-container'>
-                    <h3>Play</h3><br></br>
-                    <h4>Are you and your partner having a tough time deciding what to eat? Grab your partner and select a number below to play. We will help you decide :)</h4><br></br>
+                    <h3>Play</h3>
+                    <h4>Are you and your partner having a tough time deciding what to eat? Grab your partner and select a number below to play. We will help you decide :)</h4>
                     <div className='orange-circle-container'>
                         <div to="/play" 
                             className='orange-circle-small'
@@ -140,7 +140,7 @@ const MainPage = () => {
                 <form className='Add-food-container'>
                     <div className='Add-food-instructions'>
                         <h4>Take a peek below to see the database of food options. If there are any missing, please add a new meal by clicking the orange triangle button below!</h4>
-                        <br></br>
+                        
                         <div className='Add-food-text-row'>
                             <h3 className='Add-text'>Add</h3>
                             <div className='orange-circle-small food-search' onClick={()=>{
@@ -152,8 +152,9 @@ const MainPage = () => {
                             </div>
                         </div>
                     </div>
-                    <br></br>
+                    
                     <div className={addInputs}>
+                        <hr></hr>
                         <div className='Add-food-text-row'>
                             <input id="search" className='food-input' type="text" placeholder='Add food name...' 
                             value={search}
