@@ -11,13 +11,14 @@ const PlayPage = () => {
     const [rightChoice, setRightChoice] = useState(1)
     const [incrementor, setIncrementor] = useState(1)
 
-    const { finalResult, setFinalResult, playArray, navBarVisible, setNavBarVisible } = useContext(AppContext)
+    const { setResultsPageVisible, finalResult, setFinalResult, playArray, navBarVisible, setNavBarVisible } = useContext(AppContext)
     const navigate = useNavigate();
 
     
     useEffect(() => {
         setNavBarVisible('NavBar-container')
-    })
+        setResultsPageVisible('resultsPage-main hidden')
+    }, [])
 
     useEffect(() => {
         console.log(finalResult)

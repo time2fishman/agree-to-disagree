@@ -21,13 +21,13 @@ function App() {
   //Set state
   const [navBarVisible, setNavBarVisible] = useState('NavBar-container hidden')
   const [mainPageVisible, setMainPageVisible] = useState('MainPage-main hidden')
+  const [resultsPageVisible, setResultsPageVisible] = useState('resultsPage-main hidden')
   const [playArray, setPlayArray] = useState([])
   const [logoClassName, setLogoClassName] = useState('AgreeToDisagreeLogo')
   const [startButtonClassName, setStartButtonClassName] = useState('start-button')
   const [finalResult, setFinalResult] = useState()
   const [editModal, setEditModal] = useState()
   const [editModalClass, setEditModalClass] = useState('EditModal-container EMChidden')
-
 
   //Return routes
   return (
@@ -42,7 +42,9 @@ function App() {
           startButtonClassName, setStartButtonClassName,
           finalResult, setFinalResult,
           editModal, setEditModal,
-          editModalClass, setEditModalClass}
+          editModalClass, setEditModalClass,
+          resultsPageVisible, setResultsPageVisible
+        }
       }>
         <NavBar />
         <Routes>

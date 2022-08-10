@@ -14,13 +14,14 @@ const MainPage = () => {
         setNavBarVisible,
         mainPageVisible, setMainPageVisible,
         setPlayArray,
-        editModal
+        editModal, setResultsPageVisible
     }
     =useContext(AppContext)
 
     useEffect(()=>{
         setNavBarVisible('NavBar-container')
         setMainPageVisible('MainPage-main')
+        setResultsPageVisible('resultsPage-main hidden')
     },[])
 
     const [axiosResults, setAxiosResults] = useState([])
