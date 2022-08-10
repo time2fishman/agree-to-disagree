@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
 import EditModal from '../EditModal/EditModal';
 import Option from '../Option/Option';
+import PlayPage from '../PlayPage/PlayPage';
 import './MainPage.css'
 import seeds from './seeds.json'
 
@@ -13,6 +14,7 @@ const MainPage = () => {
     const {
         setNavBarVisible,
         mainPageVisible, setMainPageVisible,
+        playPageVisible, setPlayPageVisible,
         setPlayArray,
         editModal, setResultsPageVisible
     }
@@ -22,6 +24,7 @@ const MainPage = () => {
         setNavBarVisible('NavBar-container')
         setMainPageVisible('MainPage-main')
         setResultsPageVisible('resultsPage-main hidden')
+        setPlayPageVisible('playPage-main hidden')
     },[])
 
     const [axiosResults, setAxiosResults] = useState([])
@@ -30,7 +33,7 @@ const MainPage = () => {
     const [description, setDescription] = useState('')
     const [imageUrl, setImageUrl] = useState('')
     const [searchArray, setSearchArray] = useState([])
-    const [addInputs, setAddInputs] = useState('Add-inputs')
+    const [addInputs, setAddInputs] = useState('Add-inputs displayNone')
     const [addArrow, setAddArrow] = useState('down-triangle-closed')
 
     useEffect(()=>{

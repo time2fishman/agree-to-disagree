@@ -11,6 +11,10 @@
     grid-template-columns: .15fr 2fr .15fr;
 }
 
+.playPage-main.hidden{
+    top: 100%;
+}
+
 .playPage-background {
     grid-row: 2;
     grid-column: 1 / span 3;
@@ -109,4 +113,19 @@
     color: #1d1d1d;
     text-align: center;
     padding: 2px 0px;
+}
+
+.infoLeft-icon {
+    position: absolute;
+    margin-right: 14vw;
+    font-size: 22px;
+    /* border: solid; */
+    
+}
+
+.infoRight-icon {
+    position: absolute;
+    margin-right: 14vw;
+    font-size: 22px;
+    /* border: solid; */
 }

@@ -3,32 +3,42 @@ import { AppContext } from '../../AppContext';
 import './PlayPage.css';
 import remove from '../../images/remove.svg'
 import Option from '../Option/Option';
+import DescriptionModal from '../DescriptionModal/DescriptionModal';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const PlayPage = () => {
 
     const [leftChoice, setLeftChoice] = useState(0)
     const [rightChoice, setRightChoice] = useState(1)
     const [incrementor, setIncrementor] = useState(1)
-
-    const { setResultsPageVisible, finalResult, setFinalResult, playArray, navBarVisible, setNavBarVisible } = useContext(AppContext)
+    
+    const { 
+            finalResult, setFinalResult, playArray, navBarVisible, setNavBarVisible,
+            playPageVisible, setPlayPageVisible,
+            setMainPageVisible, 
+            DescriptionModal, setDescriptionModal, setDescriptionModalClass
+          } = useContext(AppContext)
+          
     const navigate = useNavigate();
 
-    
     useEffect(() => {
         setNavBarVisible('NavBar-container')
         setResultsPageVisible('resultsPage-main hidden')
+        setPlayPageVisible('playPage-main')
+        setMainPageVisible('MainPage-main hidden')
     }, [])
-
+    
     useEffect(() => {
-        console.log(finalResult)
-    }, [finalResult])
+        console.log(playPageVisible)
+    }, [playPageVisible])
     
     const handleClick = (choiceSelected, setChoiceSelected) => {
         if (incrementor + 1 === playArray.length) {
             setFinalResult(
                 choiceSelected === leftChoice ? rightChoice : leftChoice
             )
+            setPlayPageVisible('playPage-main hidden')
             setTimeout(() => {
                 navigate('/results', {replace: true})
             }, 750);
@@ -38,8 +48,17 @@ const PlayPage = () => {
         }
     }
 
+    const handleDescriptionClickLeft = () => {
+        console.log(playArray[leftChoice].name + ' is ' + playArray[leftChoice].description)
+    }
+
+    const handleDescriptionClickRight = () => {
+        console.log(playArray[rightChoice].name + ' is ' + playArray[rightChoice].description)
+    }
+    
+
     return (
-        <div className='playPage-main'>
+        <div className={playPageVisible}>
             <div className='playPage-background'>
                 <div className='playPage-container'>
                     <div className='info-box'>
@@ -56,6 +75,7 @@ const PlayPage = () => {
                                 cuisine={playArray[leftChoice].cuisine}
                                 description={playArray[leftChoice].description}
                             />
+                            <i onClick={() => handleDescriptionClickLeft()} className="infoLeft-icon fa-solid fa-circle-info"></i>
                             <img onClick={() => handleClick(leftChoice, setLeftChoice)} className='delete-button' src={remove} alt='Remove Button' />
                         </div>
                         <div className='food-choice'>
@@ -64,7 +84,9 @@ const PlayPage = () => {
                                 image={playArray[rightChoice].image}
                                 cuisine={playArray[rightChoice].cuisine}
                                 description={playArray[rightChoice].description}
+
                             />
+                            <i onClick={() => handleDescriptionClickRight()} className="infoRight-icon fa-solid fa-circle-info"></i>
                             <img onClick={() => handleClick(rightChoice, setRightChoice)} className='delete-button' src={remove} alt='Remove Button' />
                         </div>
                     </div>
