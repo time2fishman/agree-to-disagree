@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
+import EditModal from '../EditModal/EditModal';
 import Option from '../Option/Option';
 import './MainPage.css'
 import seeds from './seeds.json'
@@ -12,7 +13,8 @@ const MainPage = () => {
     const {
         setNavBarVisible,
         mainPageVisible, setMainPageVisible,
-        setPlayArray
+        setPlayArray,
+        editModal
     }
     =useContext(AppContext)
 
@@ -27,7 +29,7 @@ const MainPage = () => {
     const [description, setDescription] = useState('')
     const [imageUrl, setImageUrl] = useState('')
     const [searchArray, setSearchArray] = useState([])
-    const [addInputs, setAddInputs] = useState('Add-inputs-closed')
+    const [addInputs, setAddInputs] = useState('Add-inputs')
     const [addArrow, setAddArrow] = useState('down-triangle-closed')
 
     useEffect(()=>{
@@ -37,7 +39,7 @@ const MainPage = () => {
                     console.log("fetch")
                 })
                 .catch(console.error)
-    }, [])
+    }, [editModal])
 
     useEffect(()=>{
 
@@ -50,7 +52,7 @@ const MainPage = () => {
             setSearchArray(runSearch)
         }
     }, [axiosResults, search])
-
+    
     function DisplayOptions(){
         return searchArray.map((item, index)=>{
             return(
@@ -59,7 +61,8 @@ const MainPage = () => {
                         name={item.name}
                         image={item.image}
                         cuisine={item.cuisine}
-                        description={item.description}/>
+                        description={item.description}
+                        id={item._id}/>
                 </div>
             )
         })
@@ -100,16 +103,16 @@ const MainPage = () => {
 
     function addMenuClicked(){
         if(addArrow==='down-triangle-closed'){
-            setAddInputs('Add-inputs-closed')
+            setAddInputs('Add-inputs')
             setTimeout(() => {
-                setAddInputs('Add-inputs-open')
+                setAddInputs('Add-inputs open')
             }, 1);
             setAddArrow('down-triangle-open')
         } else {
             setAddArrow('down-triangle-closed')
-            setAddInputs('Add-inputs-closed')
+            setAddInputs('Add-inputs')
             setTimeout(() => {
-                setAddInputs('Add-inputs-closed displayNone')
+                setAddInputs('Add-inputs displayNone')
             }, 750);
         }
     }
@@ -118,8 +121,8 @@ const MainPage = () => {
         <div className={mainPageVisible}>
             <div className='MainPage-container'>
                 <div className='Play-container'>
-                    <h3>Play</h3><br></br>
-                    <h4>Are you and your partner having a tough time deciding what to eat? Grab your partner and select a number below to play. We will help you decide what to eat :)</h4><br></br>
+                    <h3>Play</h3>
+                    <h4>Are you and your partner having a tough time deciding what to eat? Let us help you! To get started, select how many options you'd like to choose from below.</h4>
                     <div className='orange-circle-container'>
                         <div to="/play" 
                             className='orange-circle-small'
@@ -129,40 +132,37 @@ const MainPage = () => {
 
                         <div className='orange-circle-small'
                             onClick={()=>{
-                                createPlayArray(10)
-                            }}>10</div>
+                                createPlayArray(15)
+                            }}>15</div>
                         <div className='orange-circle-small'
                             onClick={()=>{
-                                createPlayArray(20)
-                            }}>20</div>
+                                createPlayArray(25)
+                            }}>25</div>
                     </div>
                 </div>
                 <form className='Add-food-container'>
                     <div className='Add-food-instructions'>
-                        <h4>Take a peek below to see the databse of food options. If there are any missing, please add a new meal by completing boxes below!</h4>
-                        <br></br>
-                        <div className='Add-food-text-row'>
-                            <h3 className='Add-text'>Add</h3>
+                        <h3>Foods</h3>
+                        <h4>Take a peek below to see available food options. Don't see your favorite? Add it below!</h4>
+                        
+                        <div className='Add-food-text-row add-plus'>
+                            <h4 className='Add-text'>Add New Item &nbsp;&nbsp; </h4>
                             <div className='orange-circle-small food-search' onClick={()=>{
                                 addMenuClicked()
                             }}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className={addArrow} viewBox="0 0 16 16">
-                                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                </svg>
+                                <span>+</span>
                             </div>
                         </div>
                     </div>
-                    <br></br>
+                    
                     <div className={addInputs}>
+                        <hr></hr>
                         <div className='Add-food-text-row'>
                             <input id="search" className='food-input' type="text" placeholder='Add food name...' 
                             value={search}
                             onChange={(e)=>{
                                 setSearch(e.target.value)
                             }}></input>
-                            <div className='orange-circle-small food-search' onClick={()=>{
-                                addToDatabase();
-                            }}>+</div>
                         </div>
                         <div className='Add-food-text-row'>
                             <input id="cuisine" 
@@ -184,12 +184,18 @@ const MainPage = () => {
                             className='food-input' type="text" placeholder='Add image url...' onChange={(e)=>{
                                 setImageUrl(e.target.value)
                             }}></input>
+                            <div className='orange-circle-small submit-button' onClick={()=>{
+                            addToDatabase();
+                                }}>
+                                    Submit
+                                </div>
                         </div>
                     </div>
                     
                 </form>
                 <div className='Display-container'>
                     {DisplayOptions()}
+                    {editModal}
                 </div>
             </div>
         </div>
