@@ -48,7 +48,8 @@ function App() {
           editModal, setEditModal,
           editModalClass, setEditModalClass,
           descriptionModalClass, setDescriptionModalClass,
-          descriptionModal, setDescriptionModal}
+          descriptionModal, setDescriptionModal
+        }
       }>
         <NavBar />
         <Routes>
