@@ -82,8 +82,12 @@ a {
     display: flex;
     flex-direction: column;
 }
+.domAbout {
+    display: flex;
+    flex-direction: column;
+}
 
-.mikeName, .travisName, .adamName {
+.mikeName, .travisName, .adamName, .domName {
     margin-top: -9vh;
     color: transparent;
     font-size: 16px;
@@ -117,17 +121,26 @@ a {
     opacity: 30%;
     transition-duration: 200ms;
 }
+.domAbout:hover > .domName {
+    color: black;
+    opacity: 100%;
+    transition-duration: 200ms;
+}
+.domAbout:hover > .aboutPictures {
+    opacity: 30%;
+    transition-duration: 200ms;
+}
 .aboutIcons {
     margin-top: 8vh;
 }
 
-@media only screen and (max-width: 600px) {
-    .mikeName, .travisName, .adamName {
+@media only screen and (max-width: 700px) {
+    .mikeName, .travisName, .adamName, .domName {
         margin-top: 1vh;
         color: #545454;
     }
     .AboutPage-container {
-        height: 80vh;
+        height: 85vh;
         min-width: 55vw;
         margin-top: 5vh;
     }
@@ -138,7 +151,7 @@ a {
         margin-top: 2vh;
     }
     .aboutPictures {
-        height: 15vh;
+        height: 12vh;
         max-width: 40vw;
         align-self: center;
     }
@@ -157,11 +170,11 @@ a {
     i:hover {
         color: inherit;
     }
-    .travisAbout:hover > .travisName, .mikeAbout:hover > .mikeName, .adamAbout:hover > .adamName {
+    .travisAbout:hover > .travisName, .mikeAbout:hover > .mikeName, .adamAbout:hover > .adamName, .domAbout:hover > .domName {
         color: inherit;
         opacity: inherit;
     }
-    .travisAbout:hover > .aboutPictures, .mikeAbout:hover > .aboutPictures, .adamAbout:hover > .aboutPictures {
+    .travisAbout:hover > .aboutPictures, .mikeAbout:hover > .aboutPictures, .adamAbout:hover > .aboutPictures, .domAbout:hover > .aboutPictures {
         opacity: 100%;
     }
     i {
@@ -169,13 +182,14 @@ a {
     }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 1199px) {
+@media only screen and (min-width: 701px) and (max-width: 1199px) {
     .AboutPage-container {
         max-width: 90vw;
         font-size: 16px;
         height: 32vh;
+        min-width: 80vw;
     }
-    .mikeName, .travisName, .adamName {
+    .mikeName, .travisName, .adamName, .domName {
         margin-top: 1vh;
         color: #545454;
     }
@@ -185,11 +199,11 @@ a {
     i:hover {
         color: inherit;
     }
-    .travisAbout:hover > .travisName, .mikeAbout:hover > .mikeName, .adamAbout:hover > .adamName {
+    .travisAbout:hover > .travisName, .mikeAbout:hover > .mikeName, .adamAbout:hover > .adamName, .domAbout:hover > .domName {
         color: inherit;
         opacity: inherit;
     }
-    .travisAbout:hover > .aboutPictures, .mikeAbout:hover > .aboutPictures, .adamAbout:hover > .aboutPictures {
+    .travisAbout:hover > .aboutPictures, .mikeAbout:hover > .aboutPictures, .adamAbout:hover > .aboutPictures, .domAbout:hover > .aboutPictures {
         opacity: 100%;
     }
     i {
@@ -200,7 +214,7 @@ a {
 @media only screen and (max-width: 380px) {
     .AboutPage-container {
         margin-top: 7vh;
-        height: 70vh;
+        height: 85vh;
     }
     .aboutPictures {
         max-height: 10vh;
