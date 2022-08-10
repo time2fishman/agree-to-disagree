@@ -11,7 +11,10 @@ const ResultsPage = () => {
         
     useEffect(() => {
         setNavBarVisible('NavBar-container')
-        setResultsPageVisible('resultsPage-main')
+        setResultsPageVisible('resultsPage-main hidden')
+        setTimeout(() => {
+            setResultsPageVisible('resultsPage-main')
+        }, 100);
     }, [])
 
     return (

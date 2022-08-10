@@ -110,4 +110,13 @@
     display: flex;
 }
 
-
+.EditModal-x{
+    z-index: 3;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 5px;
+}

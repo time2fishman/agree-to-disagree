@@ -14,27 +14,21 @@ const PlayPage = () => {
     const [incrementor, setIncrementor] = useState(1)
     
     const { 
-            finalResult, setFinalResult,
-            playArray, 
-            navBarVisible, setNavBarVisible,
+            setFinalResult,
+            playArray, setNavBarVisible,
             playPageVisible, setPlayPageVisible,
-            setMainPageVisible, 
-            DescriptionModal, setDescriptionModal, setDescriptionModalClass,
-            setResultsPageVisible
           } = useContext(AppContext)
           
     const navigate = useNavigate();
 
     useEffect(() => {
         setNavBarVisible('NavBar-container')
-        setResultsPageVisible('resultsPage-main hidden')
-        setPlayPageVisible('playPage-main')
-        setMainPageVisible('MainPage-main hidden')
+        setPlayPageVisible('playPage-main hidden')
+        setTimeout(() => {
+            setPlayPageVisible('playPage-main')
+        }, 100);
     }, [])
-    
-    useEffect(() => {
-        console.log(playPageVisible)
-    }, [playPageVisible])
+
     
     const handleClick = (choiceSelected, setChoiceSelected) => {
         if (incrementor + 1 === playArray.length) {
