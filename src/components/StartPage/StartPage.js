@@ -11,16 +11,11 @@ const StartPage = () => {
         startButtonClassName, setStartButtonClassName,
         setPlayPageVisible, setMainPageVisible
     } = useContext(AppContext)
-
-    useEffect(()=>{
-        setMainPageVisible('MainPage-main hidden')
-        setPlayPageVisible('playPage-main hidden')
-        // setResultsPageVisible('resultsPage-main hidden)
-    }, [])
-
+    
     const navigate = useNavigate();
-
+    
     function clickHandler(){
+        setMainPageVisible('MainPage-main hidden')
         setLogoClassName('AgreeToDisagreeLogo animated rollOut')
         setStartButtonClassName('start-button clicked')
         setTimeout(() => {
