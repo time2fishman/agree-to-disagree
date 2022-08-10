@@ -48,7 +48,7 @@ const EditModal = ({name, description, cuisine, image, id}) => {
             <div className={editModalClass}>
                 <div className='EditModal-top'>
                     <h2>Edit</h2>
-                    <span onClick={()=>{
+                    <span className='EditModal-x' onClick={()=>{
                         setEditModalClass('EditModal-container EMChidden')
                         setTimeout(() => {
                             setEditModal()
