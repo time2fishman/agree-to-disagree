@@ -21,6 +21,7 @@ function App() {
   //Set state
   const [navBarVisible, setNavBarVisible] = useState('NavBar-container hidden')
   const [mainPageVisible, setMainPageVisible] = useState('MainPage-main hidden')
+  const [playPageVisible, setPlayPageVisible] = useState('playPage-main hidden')
   const [playArray, setPlayArray] = useState([])
   const [logoClassName, setLogoClassName] = useState('AgreeToDisagreeLogo')
   const [startButtonClassName, setStartButtonClassName] = useState('start-button')
@@ -37,6 +38,7 @@ function App() {
         {
           navBarVisible, setNavBarVisible,
           mainPageVisible, setMainPageVisible,
+          playPageVisible, setPlayPageVisible,
           playArray, setPlayArray,
           logoClassName, setLogoClassName,
           startButtonClassName, setStartButtonClassName,

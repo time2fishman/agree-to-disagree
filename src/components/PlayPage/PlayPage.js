@@ -11,13 +11,15 @@ const PlayPage = () => {
     const [rightChoice, setRightChoice] = useState(1)
     const [incrementor, setIncrementor] = useState(1)
 
-    const { finalResult, setFinalResult, playArray, navBarVisible, setNavBarVisible } = useContext(AppContext)
+    const { finalResult, setFinalResult, playArray, navBarVisible, setNavBarVisible,
+            playPageVisible, setPlayPageVisible } = useContext(AppContext)
     const navigate = useNavigate();
 
     
     useEffect(() => {
         setNavBarVisible('NavBar-container')
-    })
+        setPlayPageVisible('playPage-main')
+    }, [])
 
     useEffect(() => {
         console.log(finalResult)
@@ -28,6 +30,7 @@ const PlayPage = () => {
             setFinalResult(
                 choiceSelected === leftChoice ? rightChoice : leftChoice
             )
+            setPlayPageVisible('playPage-main hidden')
             setTimeout(() => {
                 navigate('/results', {replace: true})
             }, 750);
@@ -38,7 +41,7 @@ const PlayPage = () => {
     }
 
     return (
-        <div className='playPage-main'>
+        <div className={playPageVisible}>
             <div className='playPage-background'>
                 <div className='playPage-container'>
                     <div className='info-box'>
