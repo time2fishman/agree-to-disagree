@@ -1,4 +1,4 @@
-.Option-container{
+.Option-container {
     height: 100px;
     width: 100px;
     margin: 9px;
@@ -10,22 +10,22 @@
     grid-template-columns: 1fr;
 }
 
-.MainPage-main .Option-container:active{
+.MainPage-main .Option-container:active {
     scale: 1.1;
 }
 
-.MainPage-main .Option-container:hover{
+.MainPage-main .Option-container:hover {
     opacity: .5;
     cursor: pointer;
 }
 
-img.Option-image{
+img.Option-image {
     height: 100px;
     grid-row: 1;
     grid-column: 1;
 }
 
-.Option-name-container{
+.Option-name-container {
     grid-row: 1;
     grid-column: 1;
     display: flex;
@@ -37,7 +37,7 @@ img.Option-image{
     width: 100px;
 }
 
-.Option-name{
+.Option-name {
     width: 100px;
     background-color: rgba(255, 255, 255, 0.8);
     color: #1d1d1d;
@@ -46,7 +46,7 @@ img.Option-image{
 }
 
 @media screen and (min-width: 700px) {
-    .Option-container{
+    .Option-container {
         height: 150px;
         width: 150px;
         margin: 15px;
@@ -57,14 +57,14 @@ img.Option-image{
         grid-template-rows: 1fr;
         grid-template-columns: 1fr;
     }
-    
-    img.Option-image{
+
+    img.Option-image {
         height: 150px;
         grid-row: 1;
         grid-column: 1;
     }
-    
-    .Option-name-container{
+
+    .Option-name-container {
         grid-row: 1;
         grid-column: 1;
         display: flex;
@@ -75,13 +75,12 @@ img.Option-image{
         color: white;
         width: 150px;
     }
-    
-    .Option-name{
+
+    .Option-name {
         width: 150px;
         background-color: rgba(255, 255, 255, 0.8);
         color: #1d1d1d;
         text-align: center;
         padding: 2px 0px;
     }
-    
 }

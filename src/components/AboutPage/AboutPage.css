@@ -1,4 +1,4 @@
-.AboutPage-main{
+.AboutPage-main {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,20 +13,19 @@
     grid-row-gap: 0px;
 }
 
-.AboutPage-main.hidden{
+.AboutPage-main.hidden {
     top: 100%;
 }
 
-.AboutPage-container{
+.AboutPage-container {
     font-size: 22px;
     padding: 2vh;
     width: 100%;
     height: 45%;
-    grid-area: 2 / 2 / 5 / 5; 
+    grid-area: 2 / 2 / 5 / 5;
     border-radius: 20px;
     background-color: white;
     box-shadow: 0 0 5px 0 grey;
-    /* border: solid; */
 }
 
 .aboutTitle {
@@ -40,12 +39,12 @@
 
 .aboutCredits {
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
     justify-content: space-evenly;
     font-size: 17px;
     margin-top: 2vh;
-    /* border: solid; */
 }
+
 .aboutPictures {
     grid-area: 3 / 2 / 4 / 5;
     height: 17vh;
@@ -59,97 +58,122 @@ i {
     padding-left: 5px;
     font-size: 28px;
 }
+
 i:active {
     opacity: 0.5;
 }
+
 i:hover {
     color: #da7e05;
     transition-duration: 200ms;
 }
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 .mikeAbout {
     display: flex;
     flex-direction: column;
 }
+
 .adamAbout {
     display: flex;
     flex-direction: column;
 }
+
 .travisAbout {
     display: flex;
     flex-direction: column;
 }
+
 .domAbout {
     display: flex;
     flex-direction: column;
 }
 
-.mikeName, .travisName, .adamName, .domName {
+.mikeName,
+.travisName,
+.adamName,
+.domName {
     margin-top: -9vh;
     color: transparent;
     font-size: 16px;
     font-weight: 500;
 }
 
-.mikeAbout:hover > .mikeName {
+.mikeAbout:hover>.mikeName {
     color: black;
     opacity: 100%;
     transition-duration: 200ms;
 }
-.mikeAbout:hover > .aboutPictures {
+
+.mikeAbout:hover>.aboutPictures {
     opacity: 30%;
     transition-duration: 200ms;
 }
-.adamAbout:hover > .adamName {
+
+.adamAbout:hover>.adamName {
     color: black;
     opacity: 100%;
     transition-duration: 200ms;
 }
-.adamAbout:hover > .aboutPictures {
+
+.adamAbout:hover>.aboutPictures {
     opacity: 30%;
     transition-duration: 200ms;
 }
-.travisAbout:hover > .travisName {
+
+.travisAbout:hover>.travisName {
     color: black;
     opacity: 100%;
     transition-duration: 200ms;
 }
-.travisAbout:hover > .aboutPictures {
+
+.travisAbout:hover>.aboutPictures {
     opacity: 30%;
     transition-duration: 200ms;
 }
-.domAbout:hover > .domName {
+
+.domAbout:hover>.domName {
     color: black;
     opacity: 100%;
     transition-duration: 200ms;
 }
-.domAbout:hover > .aboutPictures {
+
+.domAbout:hover>.aboutPictures {
     opacity: 30%;
     transition-duration: 200ms;
 }
+
 .aboutIcons {
     margin-top: 8vh;
 }
 
 @media only screen and (max-width: 700px) {
-    .mikeName, .travisName, .adamName, .domName {
+
+    .mikeName,
+    .travisName,
+    .adamName,
+    .domName {
         margin-top: 1vh;
         color: #545454;
     }
+
     .AboutPage-container {
         height: 85vh;
         min-width: 55vw;
         margin-top: 5vh;
     }
+
     .aboutCredits {
         flex-direction: column;
         align-items: center;
         row-gap: 1vh;
         margin-top: 2vh;
     }
+
     .aboutPictures {
         height: 12vh;
         max-width: 40vw;
@@ -161,22 +185,30 @@ a {
         margin-top: 1vh;
         padding: 5px;
     }
+
     .aboutIcons {
         margin-top: 1vh;
     }
+
     i:hover {
         color: inherit;
     }
-    i:hover {
-        color: inherit;
-    }
-    .travisAbout:hover > .travisName, .mikeAbout:hover > .mikeName, .adamAbout:hover > .adamName, .domAbout:hover > .domName {
+
+    .travisAbout:hover>.travisName,
+    .mikeAbout:hover>.mikeName,
+    .adamAbout:hover>.adamName,
+    .domAbout:hover>.domName {
         color: inherit;
         opacity: inherit;
     }
-    .travisAbout:hover > .aboutPictures, .mikeAbout:hover > .aboutPictures, .adamAbout:hover > .aboutPictures, .domAbout:hover > .aboutPictures {
+
+    .travisAbout:hover>.aboutPictures,
+    .mikeAbout:hover>.aboutPictures,
+    .adamAbout:hover>.aboutPictures,
+    .domAbout:hover>.aboutPictures {
         opacity: 100%;
     }
+
     i {
         font-size: 22px;
     }
@@ -189,23 +221,38 @@ a {
         height: 32vh;
         min-width: 80vw;
     }
-    .mikeName, .travisName, .adamName, .domName {
+
+    .mikeName,
+    .travisName,
+    .adamName,
+    .domName {
         margin-top: 1vh;
         color: #545454;
     }
+
     .aboutIcons {
         margin-top: 1vh;
     }
+
     i:hover {
         color: inherit;
     }
-    .travisAbout:hover > .travisName, .mikeAbout:hover > .mikeName, .adamAbout:hover > .adamName, .domAbout:hover > .domName {
+
+    .travisAbout:hover>.travisName,
+    .mikeAbout:hover>.mikeName,
+    .adamAbout:hover>.adamName,
+    .domAbout:hover>.domName {
         color: inherit;
         opacity: inherit;
     }
-    .travisAbout:hover > .aboutPictures, .mikeAbout:hover > .aboutPictures, .adamAbout:hover > .aboutPictures, .domAbout:hover > .aboutPictures {
+
+    .travisAbout:hover>.aboutPictures,
+    .mikeAbout:hover>.aboutPictures,
+    .adamAbout:hover>.aboutPictures,
+    .domAbout:hover>.aboutPictures {
         opacity: 100%;
     }
+
     i {
         font-size: 24px;
     }
@@ -216,6 +263,7 @@ a {
         margin-top: 7vh;
         height: 85vh;
     }
+
     .aboutPictures {
         max-height: 10vh;
     }

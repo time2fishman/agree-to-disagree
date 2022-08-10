@@ -9,14 +9,11 @@ const AboutPage = () => {
     setStartButtonClassName,
   } = useContext(AppContext);
 
-
   useEffect(() => {
     setNavBarVisible('NavBar-container')
     setLogoClassName("AgreeToDisagreeLogo animated rollOut hiddenLogo");
     setStartButtonClassName("start-button clicked");
-}, [])
-  
-  
+  }, [])
 
   return (
     <div className="AboutPage-main">
@@ -48,7 +45,6 @@ const AboutPage = () => {
                 </a>
               </div>
             </div>
-
             <div className="adamAbout">
               <img
                 className="aboutPictures"
@@ -73,7 +69,6 @@ const AboutPage = () => {
                 </a>
               </div>
             </div>
-
             <div className="travisAbout">
               <img
                 className="aboutPictures"
@@ -99,28 +94,28 @@ const AboutPage = () => {
               </div>
             </div>
             <div className="domAbout">
-            <img
-              className="aboutPictures"
-              src="https://media-exp1.licdn.com/dms/image/C5603AQHrmtz6vBYzPg/profile-displayphoto-shrink_800_800/0/1615519563310?e=1665014400&v=beta&t=dL7Lh4x0o9xQe_AH5uPIIx0X_o0siAVLsboEwDyO4eE"
-              alt="Dominique Dutton selfie"
-            />
-            <div className="domName">Dominique Dutton</div>
-            <div className="aboutIcons">
-              <a
-                href="https://www.linkedin.com/in/domdutton/"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-              <a
-                href="https://github.com/domdutton"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <i className="fa-brands fa-square-github"></i>
-              </a>
-            </div>
+              <img
+                className="aboutPictures"
+                src="https://media-exp1.licdn.com/dms/image/C5603AQHrmtz6vBYzPg/profile-displayphoto-shrink_800_800/0/1615519563310?e=1665014400&v=beta&t=dL7Lh4x0o9xQe_AH5uPIIx0X_o0siAVLsboEwDyO4eE"
+                alt="Dominique Dutton selfie"
+              />
+              <div className="domName">Dominique Dutton</div>
+              <div className="aboutIcons">
+                <a
+                  href="https://www.linkedin.com/in/domdutton/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <i className="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://github.com/domdutton"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <i className="fa-brands fa-square-github"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>

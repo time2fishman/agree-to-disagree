@@ -1,13 +1,9 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
-import EditModal from '../EditModal/EditModal';
 import Option from '../Option/Option';
-import PlayPage from '../PlayPage/PlayPage';
 import './MainPage.css'
-import seeds from './seeds.json'
-
 
 const MainPage = () => {
 
@@ -17,15 +13,15 @@ const MainPage = () => {
         setPlayArray,
         editModal
     }
-    =useContext(AppContext)
+        = useContext(AppContext)
 
-    useEffect(()=>{
+    useEffect(() => {
         setNavBarVisible('NavBar-container')
         setMainPageVisible('MainPage-main hidden')
         setTimeout(() => {
             setMainPageVisible('MainPage-main')
         }, 100);
-    },[])
+    }, [])
 
     const [axiosResults, setAxiosResults] = useState([])
     const [search, setSearch] = useState('')
@@ -36,37 +32,36 @@ const MainPage = () => {
     const [addInputs, setAddInputs] = useState('Add-inputs displayNone')
     const [addArrow, setAddArrow] = useState('down-triangle-closed')
 
-    useEffect(()=>{
-           axios.get('https://agree-to-disagree.herokuapp.com/foods')
-                .then(response => {
-                    setAxiosResults(response.data)
-                    console.log("fetch")
-                })
-                .catch(console.error)
+    useEffect(() => {
+        axios.get('https://agree-to-disagree.herokuapp.com/foods')
+            .then(response => {
+                setAxiosResults(response.data)
+                console.log("fetch")
+            })
+            .catch(console.error)
     }, [editModal])
 
-    useEffect(()=>{
-
-        if(search===''){
+    useEffect(() => {
+        if (search === '') {
             setSearchArray(axiosResults)
         } else {
-            const runSearch = axiosResults.filter((item)=>{
-                return item.name.substring(0, search.length).toLowerCase()===search.toLowerCase()
+            const runSearch = axiosResults.filter((item) => {
+                return item.name.substring(0, search.length).toLowerCase() === search.toLowerCase()
             })
             setSearchArray(runSearch)
         }
     }, [axiosResults, search])
-    
-    function DisplayOptions(){
-        return searchArray.map((item, index)=>{
-            return(
+
+    function DisplayOptions() {
+        return searchArray.map((item, index) => {
+            return (
                 <div key={index}>
-                    <Option 
+                    <Option
                         name={item.name}
                         image={item.image}
                         cuisine={item.cuisine}
                         description={item.description}
-                        id={item._id}/>
+                        id={item._id} />
                 </div>
             )
         })
@@ -74,18 +69,18 @@ const MainPage = () => {
 
     const navigate = useNavigate()
 
-    function createPlayArray(count){
-        const shuffled = [...searchArray].sort(()=>0.5 - Math.random());
+    function createPlayArray(count) {
+        const shuffled = [...searchArray].sort(() => 0.5 - Math.random());
         const shortened = shuffled.splice(0, count)
         setPlayArray(shortened)
         setMainPageVisible('MainPage-main hidden')
         setTimeout(() => {
-            navigate('/play', {replace: true})
+            navigate('/play', { replace: true })
         }, 1000);
     }
 
-    function addToDatabase(){
-        if(search.length < 1 || cuisine.length<1 || description.length<1 || imageUrl<1){
+    function addToDatabase() {
+        if (search.length < 1 || cuisine.length < 1 || description.length < 1 || imageUrl < 1) {
             alert('Please fill out all boxes to proceed!')
         } else {
             axios.post('https://agree-to-disagree.herokuapp.com/foods', {
@@ -102,11 +97,10 @@ const MainPage = () => {
             setDescription('')
             setImageUrl('')
         }
-
     }
 
-    function addMenuClicked(){
-        if(addArrow==='down-triangle-closed'){
+    function addMenuClicked() {
+        if (addArrow === 'down-triangle-closed') {
             setAddInputs('Add-inputs')
             setTimeout(() => {
                 setAddInputs('Add-inputs open')
@@ -128,18 +122,17 @@ const MainPage = () => {
                     <h3>Play</h3>
                     <h4>Are you and your partner having a tough time deciding what to eat? Let us help you! To get started, select how many options you'd like to choose from below.</h4>
                     <div className='orange-circle-container'>
-                        <div to="/play" 
+                        <div to="/play"
                             className='orange-circle-small'
-                            onClick={()=>{
+                            onClick={() => {
                                 createPlayArray(5)
                             }}>5</div>
-
                         <div className='orange-circle-small'
-                            onClick={()=>{
+                            onClick={() => {
                                 createPlayArray(15)
                             }}>15</div>
                         <div className='orange-circle-small'
-                            onClick={()=>{
+                            onClick={() => {
                                 createPlayArray(25)
                             }}>25</div>
                     </div>
@@ -148,54 +141,51 @@ const MainPage = () => {
                     <div className='Add-food-instructions'>
                         <h3>Foods</h3>
                         <h4>Take a peek below to see available food options. Don't see your favorite? Add it below!</h4>
-                        
                         <div className='Add-food-text-row add-plus'>
                             <h4 className='Add-text'>Add New Item &nbsp;&nbsp; </h4>
-                            <div className='orange-circle-small food-search' onClick={()=>{
+                            <div className='orange-circle-small food-search' onClick={() => {
                                 addMenuClicked()
                             }}>
                                 <span>+</span>
                             </div>
                         </div>
                     </div>
-                    
                     <div className={addInputs}>
                         <hr></hr>
                         <div className='Add-food-text-row'>
-                            <input id="search" className='food-input' type="text" placeholder='Add food name...' 
-                            value={search}
-                            onChange={(e)=>{
-                                setSearch(e.target.value)
-                            }}></input>
+                            <input id="search" className='food-input' type="text" placeholder='Add food name...'
+                                value={search}
+                                onChange={(e) => {
+                                    setSearch(e.target.value)
+                                }}></input>
                         </div>
                         <div className='Add-food-text-row'>
-                            <input id="cuisine" 
-                            value={cuisine}
-                            className='food-input' type="text" placeholder='Add cuisine...' onChange={(e)=>{
-                                setCuisine(e.target.value)
-                            }}></input>
+                            <input id="cuisine"
+                                value={cuisine}
+                                className='food-input' type="text" placeholder='Add cuisine...' onChange={(e) => {
+                                    setCuisine(e.target.value)
+                                }}></input>
                         </div>
                         <div className='Add-food-text-row'>
-                            <input id="description" 
-                            value={description}
-                            className='food-input' type="text" placeholder='Add description...' onChange={(e)=>{
-                                setDescription(e.target.value)
-                            }}></input>
+                            <input id="description"
+                                value={description}
+                                className='food-input' type="text" placeholder='Add description...' onChange={(e) => {
+                                    setDescription(e.target.value)
+                                }}></input>
                         </div>
                         <div className='Add-food-text-row'>
-                            <input id="imageUrl" 
-                            value={imageUrl}
-                            className='food-input' type="text" placeholder='Add image url...' onChange={(e)=>{
-                                setImageUrl(e.target.value)
-                            }}></input>
-                            <div className='orange-circle-small submit-button' onClick={()=>{
-                            addToDatabase();
-                                }}>
-                                    Submit
-                                </div>
+                            <input id="imageUrl"
+                                value={imageUrl}
+                                className='food-input' type="text" placeholder='Add image url...' onChange={(e) => {
+                                    setImageUrl(e.target.value)
+                                }}></input>
+                            <div className='orange-circle-small submit-button' onClick={() => {
+                                addToDatabase();
+                            }}>
+                                Submit
+                            </div>
                         </div>
                     </div>
-                    
                 </form>
                 <div className='Display-container'>
                     {DisplayOptions()}

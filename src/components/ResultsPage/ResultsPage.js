@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../AppContext';
 import './ResultsPage.css';
 import Option from '../Option/Option';
-import { useNavigate } from 'react-router-dom';
 
 const ResultsPage = () => {
 
-    const { finalResult, playArray, navBarVisible, setNavBarVisible, resultsPageVisible, setResultsPageVisible } = useContext(AppContext)
+    const { finalResult, playArray, setNavBarVisible, resultsPageVisible, setResultsPageVisible } = useContext(AppContext)
     const chosenFood = playArray[finalResult].name
-        
+
     useEffect(() => {
         setNavBarVisible('NavBar-container')
         setResultsPageVisible('resultsPage-main hidden')

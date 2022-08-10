@@ -3,33 +3,33 @@ import { AppContext } from '../../AppContext';
 import EditModal from '../EditModal/EditModal';
 import './Option.css'
 
-const Option = ({name, image, description, cuisine, id}) => {
+const Option = ({ name, image, description, cuisine, id }) => {
 
-    const { editModal, setEditModal, setEditModalClass } = useContext(AppContext)
-    
-    function callEditModal(){
+    const { setEditModal, setEditModalClass } = useContext(AppContext)
+
+    function callEditModal() {
         setTimeout(() => {
             setEditModalClass('EditModal-container')
         }, 1);
         setEditModal(
-            <EditModal 
+            <EditModal
                 name={name}
                 description={description}
                 cuisine={cuisine}
                 image={image}
                 id={id}
-                />
+            />
         )
     }
 
     return (
-        <div className='Option-container' onClick={()=>{
+        <div className='Option-container' onClick={() => {
             callEditModal()
         }}>
             <div className='Option-name-container'>
                 <span className='Option-name'>{name}</span>
             </div>
-            <img className='Option-image' src={image} alt={description}/>
+            <img className='Option-image' src={image} alt={description} />
         </div>
     );
 };

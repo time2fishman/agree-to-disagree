@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = () => {
-  const { navBarVisible, setNavBarVisible } = useContext(AppContext);
+  const { navBarVisible } = useContext(AppContext);
 
   const [isActive, setActive] = useState("false");
 

@@ -8,7 +8,7 @@ import ResultsPage from './components/ResultsPage/ResultsPage';
 
 //Import React dependencies
 import { Route, Routes } from "react-router-dom";
-import { useState, createContext } from 'react';
+import { useState } from 'react';
 
 // Import Images
 import sparkles from './images/sparkles.png'
