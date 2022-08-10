@@ -33,18 +33,18 @@ As a user I would like to have these features:
  
  This application was built with:
 
- 1.  ReactJS - A JavaScript library for building user interfaces
+ 1. ReactJS - A JavaScript library for building user interfaces.
 
- 2.  MongoDB -  A non-relational document database that provides support for JSON-like storage
+ 2. MongoDB -  A non-relational document database that provides support for JSON-like storage.
+
+ 3. Mongoose - A Node.js-based Object Data Modeling (ODM) library for MongoDB.
+
+ 4. Node - An open source development platform for executing JavaScript code server-side.
+
+ 5. Express - Provides server-side logic for web and mobile applications.
 
 
 ## Getting Started/Installation Instructions:
-npm install Installs required dependencies.
+npm install - Installs required dependencies.
 
-npm start Starts the development server.
-
-npm run build Bundles the app into static files for production.
-
-npm test Starts the test runner.
-
-npm run eject Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
+npm start - Starts the development server.
