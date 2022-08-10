@@ -116,16 +116,89 @@
 }
 
 .infoLeft-icon {
-    position: absolute;
-    margin-right: 14vw;
+    align-self: flex-start; 
     font-size: 22px;
-    /* border: solid; */
-    
+    position: absolute;
 }
 
 .infoRight-icon {
-    position: absolute;
-    margin-right: 14vw;
+    align-self: flex-end;
     font-size: 22px;
-    /* border: solid; */
+    position: absolute;
+}
+
+.closeModal {
+    position: absolute;
+    font-size: 24px;
+    bottom: 4vh;
+}
+
+.DescriptionModal-main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(193, 193, 193, 0.569);
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    transition: 500ms ease;
+}
+
+.DescriptionModal-container{
+    background-color: white;
+    position: absolute;
+    left: 20vw;
+    top: 30vh;
+    height: 40vh;
+    width: 60vw;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: 1000ms ease;
+    opacity: 1;
+    align-content: center;
+    font-size: 36px;
+    box-shadow: 0 0 10px -3px grey;
+    
+}
+
+.DescriptionModal-container.DMChidden {
+    margin-top: -1000px;
+    transition: 1000ms ease;
+}
+
+.DescriptionModal-option-container {
+    width: 100%;
+    margin-top: -40px;
+    margin-bottom: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1199px) {
+    .DescriptionModal-container {
+        font-size: 28px;
+        max-height: 30vh;
+    }
+    .closeModal {
+        bottom: 2vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .DescriptionModal-container {
+        font-size: 22px;
+        max-height: 75vh;
+        min-width: 60vw;
+        left: 17vw;
+    }
+    .closeModal {
+        bottom: 2vh;
+    }
 }
