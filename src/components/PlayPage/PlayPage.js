@@ -12,24 +12,30 @@ const PlayPage = () => {
     const [leftChoice, setLeftChoice] = useState(0)
     const [rightChoice, setRightChoice] = useState(1)
     const [incrementor, setIncrementor] = useState(1)
-
-    const { finalResult, setFinalResult, playArray, navBarVisible, setNavBarVisible, DescriptionModal, setDescriptionModal, setDescriptionModalClass } = useContext(AppContext)
+    const { 
+            finalResult, setFinalResult, playArray, navBarVisible, setNavBarVisible,
+            playPageVisible, setPlayPageVisible,
+            setMainPageVisible, 
+            DescriptionModal, setDescriptionModal, setDescriptionModalClass
+          } = useContext(AppContext)
     const navigate = useNavigate();
 
-    
     useEffect(() => {
         setNavBarVisible('NavBar-container')
-    })
-
+        setPlayPageVisible('playPage-main')
+        setMainPageVisible('MainPage-main hidden')
+    }, [])
+    
     useEffect(() => {
-        console.log(finalResult)
-    }, [finalResult])
+        console.log(playPageVisible)
+    }, [playPageVisible])
     
     const handleClick = (choiceSelected, setChoiceSelected) => {
         if (incrementor + 1 === playArray.length) {
             setFinalResult(
                 choiceSelected === leftChoice ? rightChoice : leftChoice
             )
+            setPlayPageVisible('playPage-main hidden')
             setTimeout(() => {
                 navigate('/results', {replace: true})
             }, 750);
@@ -49,7 +55,7 @@ const PlayPage = () => {
     
 
     return (
-        <div className='playPage-main'>
+        <div className={playPageVisible}>
             <div className='playPage-background'>
                 <div className='playPage-container'>
                     <div className='info-box'>
