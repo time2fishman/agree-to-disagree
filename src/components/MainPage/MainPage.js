@@ -29,7 +29,7 @@ const MainPage = () => {
     const [description, setDescription] = useState('')
     const [imageUrl, setImageUrl] = useState('')
     const [searchArray, setSearchArray] = useState([])
-    const [addInputs, setAddInputs] = useState('Add-inputs')
+    const [addInputs, setAddInputs] = useState('Add-inputs displayNone')
     const [addArrow, setAddArrow] = useState('down-triangle-closed')
 
     useEffect(()=>{
