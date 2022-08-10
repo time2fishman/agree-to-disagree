@@ -19,7 +19,7 @@ const EditModal = ({name, description, cuisine, image, id}) => {
     function editSubmitHandler(){
         axios.put(`https://agree-to-disagree.herokuapp.com/foods/${id}`,{
             "name":editName,
-            "desciprtion": editDescription,
+            "description": editDescription,
             "cuisine": editCuisine,
             "image": editImage
         })

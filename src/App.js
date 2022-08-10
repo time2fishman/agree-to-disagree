@@ -27,6 +27,8 @@ function App() {
   const [finalResult, setFinalResult] = useState()
   const [editModal, setEditModal] = useState()
   const [editModalClass, setEditModalClass] = useState('EditModal-container EMChidden')
+  const [descriptionModal, setDescriptionModal] = useState()
+  const [descriptionModalClass, setDescriptionModalClass] = useState('DescriptionModal-container DMChidden')
 
 
   //Return routes
@@ -42,7 +44,9 @@ function App() {
           startButtonClassName, setStartButtonClassName,
           finalResult, setFinalResult,
           editModal, setEditModal,
-          editModalClass, setEditModalClass}
+          editModalClass, setEditModalClass,
+          descriptionModalClass, setDescriptionModalClass,
+          descriptionModal, setDescriptionModal}
       }>
         <NavBar />
         <Routes>
