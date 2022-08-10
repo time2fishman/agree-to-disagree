@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
 import agreeToDisagreeLogo from '../../images/agreeToDisagreeLogo.png';
@@ -8,8 +8,15 @@ import './StartPage.css'
 const StartPage = () => {
     const { 
         logoClassName, setLogoClassName,
-        startButtonClassName, setStartButtonClassName
-        } = useContext(AppContext)
+        startButtonClassName, setStartButtonClassName,
+        setPlayPageVisible, setMainPageVisible
+    } = useContext(AppContext)
+
+    useEffect(()=>{
+        setMainPageVisible('MainPage-main hidden')
+        setPlayPageVisible('playPage-main hidden')
+        // setResultsPageVisible('resultsPage-main hidden)
+    }, [])
 
     const navigate = useNavigate();
 
