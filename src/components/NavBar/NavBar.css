@@ -42,6 +42,7 @@
 
 .hiddenMenu {
     visibility: hidden;
+    height: 40px;
 }
 
 .dropFields {

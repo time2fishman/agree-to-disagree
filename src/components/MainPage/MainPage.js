@@ -14,7 +14,6 @@ const MainPage = () => {
     const {
         setNavBarVisible,
         mainPageVisible, setMainPageVisible,
-        playPageVisible, setPlayPageVisible,
         setPlayArray,
         editModal
     }
@@ -22,9 +21,10 @@ const MainPage = () => {
 
     useEffect(()=>{
         setNavBarVisible('NavBar-container')
-        setMainPageVisible('MainPage-main')
-        setPlayPageVisible('playPage-main hidden')
-        console.log(playPageVisible)
+        setMainPageVisible('MainPage-main hidden')
+        setTimeout(() => {
+            setMainPageVisible('MainPage-main')
+        }, 100);
     },[])
 
     const [axiosResults, setAxiosResults] = useState([])
