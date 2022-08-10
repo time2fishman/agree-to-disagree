@@ -47,7 +47,7 @@ function App() {
           finalResult, setFinalResult,
           editModal, setEditModal,
           editModalClass, setEditModalClass,
-          resultsPageVisible, setResultsPageVisible
+          resultsPageVisible, setResultsPageVisible,
           descriptionModalClass, setDescriptionModalClass,
           descriptionModal, setDescriptionModal
         }

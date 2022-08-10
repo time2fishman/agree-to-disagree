@@ -14,10 +14,13 @@ const PlayPage = () => {
     const [incrementor, setIncrementor] = useState(1)
     
     const { 
-            finalResult, setFinalResult, playArray, navBarVisible, setNavBarVisible,
+            finalResult, setFinalResult,
+            playArray, 
+            navBarVisible, setNavBarVisible,
             playPageVisible, setPlayPageVisible,
             setMainPageVisible, 
-            DescriptionModal, setDescriptionModal, setDescriptionModalClass
+            DescriptionModal, setDescriptionModal, setDescriptionModalClass,
+            setResultsPageVisible
           } = useContext(AppContext)
           
     const navigate = useNavigate();
