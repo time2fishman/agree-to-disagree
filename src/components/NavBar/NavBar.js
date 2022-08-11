@@ -6,7 +6,7 @@ import "./NavBar.css";
 import DarkModeToggle from "react-dark-mode-toggle";
 
 const NavBar = () => {
-  const { navBarVisible } = useContext(AppContext);
+  const { navBarVisible, setMainPageVisible, setLogoClassName, setStartButtonClassName } = useContext(AppContext);
   const[isDarkMode, setIsDarkmode] = useState(() => false)
   const [isActive, setActive] = useState(() => true);
   
@@ -22,10 +22,18 @@ const NavBar = () => {
     setActive(!isActive);
   };
 
+  const handshakeClick = () => {
+        setMainPageVisible('MainPage-main')
+        setLogoClassName('AgreeToDisagreeLogo')
+        setStartButtonClassName('start-button')
+  }
+
   return (
     <div className="NavBar-main">
       <div className={navBarVisible}>
-        <img className="handShake-icon" src={handShake} alt="handshake icon" />
+        <Link to="/" onClick={handshakeClick}>
+            <img className="handShake-icon" src={handShake} alt="handshake icon" />
+          </Link>
         <i className="menuBars-icon fa-solid fa-bars" onClick={menuToggle}></i>
       </div>
       <DarkModeToggle
