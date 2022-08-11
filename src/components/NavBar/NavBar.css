@@ -1,0 +1,141 @@
+.NavBar-main {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.NavBar-container {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    transition: 1000ms ease;
+    box-shadow: 0 0 10px -3px grey;
+}
+
+.NavBar-container.hidden {
+    margin-top: -75px;
+    transition: 1000ms ease;
+}
+
+.handShake-icon {
+    margin-top: -20px;
+    height: 100px;
+}
+
+.menuBars-icon {
+    align-self: center;
+    margin-right: 10px;
+    font-size: 36px;
+    color: #da7e05;
+}
+
+.menuBars-icon:hover {
+    color: #da7e05;
+    transition: 500ms ease;
+    opacity: 100%;
+}
+
+.hiddenMenu {
+    visibility: hidden;
+    height: 40px;
+}
+
+.dropFields {
+    visibility: visible;
+    list-style: none;
+    position: absolute;
+    left: 99.6vw;
+    top: 4.5vh;
+    margin: auto;
+    transition: all 0.5s ease;
+}
+
+.dropFields li {
+    border-radius: 5px;
+    background-color: white;
+    transition-duration: 500ms;
+    box-shadow: 0 0 25px -3px grey;
+    font-size: 20px;
+    text-align: center;
+    padding: 2px;
+    color: #545454;
+    font-family: 'Arima Madurai', cursive;
+    font-weight: 700;
+    margin: 2.5px;
+}
+
+.dropFields li:hover {
+    border: 2px outset #545454;
+    transition-duration: 200ms;
+    background-color: #da7e05;
+    color: white;
+}
+
+.dropMenuContainer {
+    border-radius: 5px;
+    margin-left: -6vw;
+    margin-top: 3vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 8vh;
+    padding: 5.5px;
+    min-height: 78px;
+    min-width: 55px;
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1299px) {
+    .dropMenuContainer {
+        margin-left: -8vw;
+        height: 8vh;
+        padding: 5px;
+    }
+
+    .dropFields {
+        margin-left: 8.5vw;
+        left: 90vw;
+    }
+
+    .dropFields li {
+        min-width: 6vw;
+        max-width: 12vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .dropMenuContainer {
+        margin-left: 6vw;
+        margin-top: 3vh;
+        max-width: 15vw;
+        height: 8.5vh;
+    }
+
+    .dropFields {
+        left: 75vw;
+    }
+
+    .dropFields li {
+        min-width: 15vw;
+    }
+}
+
+@media only screen and (min-width:500px) and (max-width: 699px) {
+    .dropFields {
+        left: 81vw;
+    }
+}
+
+@media only screen and (max-height: 700px) and (max-width: 300px) {
+    .dropMenuContainer {
+        margin-top: 5vh;
+    }
+
+    .dropFields li {
+        width: 18vw;
+    }
+
+    .dropFields {
+        left: 70vw;
+    }
+}

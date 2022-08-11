@@ -1,0 +1,222 @@
+.playPage-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 1500ms ease;
+    display: grid;
+    grid-template-rows: 1fr 5fr .6fr;
+    grid-template-columns: .15fr 2fr .15fr;
+}
+
+.playPage-main.hidden {
+    top: 100%;
+}
+
+.playPage-background {
+    grid-row: 2;
+    grid-column: 1 / span 3;
+    background-color: #ffffff88;
+}
+
+.playPage-container {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+.info-box {
+    padding: 1em;
+    margin-top: 7%;
+    line-height: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px -3px grey;
+}
+
+.info-box h2 {
+    text-align: center;
+    line-height: 15px;
+}
+
+.choose-one {
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    max-width: 700px;
+}
+
+.food-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.delete-button {
+    cursor: pointer;
+    width: 3em;
+    margin-top: 20px;
+}
+
+.delete-button:active {
+    transform: scale(1.1);
+}
+
+.counter {
+    grid-row: 3;
+    grid-column: 2;
+    text-align: center;
+    margin: auto;
+}
+
+.food-choice .Option-container {
+    height: 150px;
+    width: 150px;
+    margin: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px -1px grey;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.food-choice img.Option-image {
+    height: 150px;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.food-choice .Option-name-container {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    z-index: 1;
+    color: white;
+    width: 150px;
+}
+
+.food-choice .Option-name {
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #1d1d1d;
+    text-align: center;
+    padding: 2px 0px;
+}
+
+.infoLeft-icon {
+    align-self: flex-start;
+    font-size: 22px;
+    position: absolute;
+}
+
+.infoRight-icon {
+    align-self: flex-end;
+    font-size: 22px;
+    position: absolute;
+}
+
+.closeModal {
+    position: absolute;
+    font-size: 24px;
+    bottom: 4vh;
+}
+
+.DescriptionModal-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(193, 193, 193, 0.569);
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    transition: 500ms ease;
+}
+
+.DescriptionModal-container {
+    background-color: white;
+    position: absolute;
+    left: 20vw;
+    top: 30vh;
+    height: 40vh;
+    width: 60vw;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: 1000ms ease;
+    opacity: 1;
+    align-content: center;
+    font-size: 36px;
+    box-shadow: 0 0 10px -3px grey;
+
+}
+
+.DescriptionModal-container.DMChidden {
+    margin-top: -1000px;
+    transition: 1000ms ease;
+}
+
+.DescriptionModal-option-container {
+    width: 100%;
+    margin-top: -40px;
+    margin-bottom: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1199px) {
+    .DescriptionModal-container {
+        font-size: 28px;
+        max-height: 30vh;
+    }
+
+    .closeModal {
+        bottom: 2vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .DescriptionModal-container {
+        font-size: 22px;
+        max-height: 75vh;
+        min-width: 60vw;
+        left: 17vw;
+    }
+
+    .closeModal {
+        bottom: 2vh;
+    }
+}
+
+.dark-mode .info-box {
+    background-color: black;
+    color: white
+}
+
+.dark-mode .food-choice .Option-name {
+    background-color: black;
+    color: white
+}

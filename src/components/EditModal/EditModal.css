@@ -1,0 +1,122 @@
+.EditModal-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(193, 193, 193, 0.569);
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    transition: 500ms ease;
+}
+
+.EditModal-container {
+    background-color: white;
+    height: 500px;
+    width: 300px;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: 1000ms ease;
+    opacity: 1;
+}
+
+.EditModal-container.EMChidden {
+    margin-top: -1000px;
+    transition: 1000ms ease;
+}
+
+.EditModal-top {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.EditModal-top span {
+    margin-top: -5px;
+    z-index: 2;
+}
+
+.EditModal-top span:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.EditModal-top span:active {
+    scale: 1.1;
+}
+
+.EditModal-option-container {
+    width: 100%;
+    margin-top: -40px;
+    margin-bottom: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.EditModal-main .Option-container {
+    border-radius: 10px;
+}
+
+.EditModal-main .Option-container:active {
+    scale: none;
+}
+
+.EditModal-main .Option-container:hover {
+    opacity: 1;
+    cursor: auto;
+}
+
+.EditModal-main .Option-name-container {
+    display: none;
+}
+
+.EditModal-main .food-input {
+    width: 100%;
+}
+
+.EditModal-form {
+    width: 100%;
+    display: grid;
+}
+
+.orange-circle-small.submit-button {
+    margin: auto;
+    margin-top: 15px;
+    padding: 0 15px;
+    height: 35px;
+    width: auto;
+    border-radius: 20px;
+}
+
+.EditModal-container h3 {
+    width: 100%;
+}
+
+.EditModal-container .Add-food-text-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.Edit-buttons {
+    width: 100%;
+    display: flex;
+}
+
+.EditModal-x {
+    z-index: 3;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 5px;
+}

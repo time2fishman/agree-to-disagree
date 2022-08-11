@@ -1,0 +1,185 @@
+.MainPage-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: 1500ms ease;
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: .15fr 2fr .15fr;
+}
+
+.MainPage-main.hidden {
+    top: 100%;
+}
+
+.MainPage-container {
+    width: 100%;
+    height: 100%;
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.Play-container {
+    border-radius: 20px;
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 0 10px -3px grey;
+    margin-bottom: 20px;
+}
+
+.orange-circle-container {
+    /* border:solid; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.orange-circle-small {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    height: 50px;
+    width: 50px;
+    background-color: #da7e05;
+    border-radius: 50%;
+    font-size: large;
+    font-weight: 600;
+    box-shadow: 0 0 10px -2px grey;
+    margin-top: 15px;
+}
+
+.orange-circle-small:active {
+    transform: scale(1.1);
+}
+
+.orange-circle-small:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.Add-food-container {
+    border-radius: 20px;
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 0 10px -3px grey;
+    margin-bottom: 30px;
+}
+
+.Add-food-text-row {
+    padding: 2px 0;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 10px 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-end;
+}
+
+.Add-food-text-row.add-plus {
+    justify-content: center;
+}
+
+.food-input {
+    line-height: 1;
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: grey;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    border-radius: 0;
+    border-bottom: solid;
+    background-color: transparent;
+    height: 30px;
+    margin-top: auto;
+}
+
+.orange-circle-small.food-search {
+    grid-area: 1 / 3;
+    font-size: 35px;
+    z-index: 1;
+    margin: 0;
+    height: 30px;
+    width: 30px;
+    font-size: x-large;
+    margin-top: 10px;
+}
+
+.orange-circle-small.food-search span {
+    margin: auto;
+}
+
+.Display-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.Add-text {
+    margin-top: 15px;
+}
+
+.Add-food-instructions {
+    position: sticky;
+    z-index: 1;
+    background-color: white;
+    margin: -15px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.down-triangle-open {
+    transition: 500ms ease;
+    z-index: 1;
+}
+
+.down-triangle-closed {
+    transform: rotate(90deg);
+    transition: 500ms ease;
+    z-index: 1;
+}
+
+.Add-inputs {
+    transition: 500ms ease;
+    z-index: -1;
+    opacity: 0;
+    margin-top: -231px;
+}
+
+.Add-inputs.open {
+    opacity: 1;
+    z-index: -1;
+    margin-top: 15px;
+}
+
+.displayNone {
+    display: none;
+}
+
+.MainPage-container h4 {
+    line-height: normal;
+}
+
+.MainPage-main h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.dark-mode .Add-food-instructions, .dark-mode .Play-container {
+    background-color: black;
+    color: white
+}
