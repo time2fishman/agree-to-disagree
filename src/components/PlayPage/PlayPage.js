@@ -70,16 +70,15 @@ const PlayPage = () => {
             <div className="playPage-background">
                 <div className="playPage-container">
                     <div className="info-box">
-                        <h2>Alternate Players:</h2>
+                        <h2>Gameplay!</h2>
                         <p>
-                            <strong>Player 1</strong> - Delete your least desired option
+                            <strong>Step 1</strong> - Pick who goes first. You will be Player 1! Eliminate your least desired option by clicking the trash can below its image. 
                         </p>
                         <p>
-                            <strong>Player 2</strong> - Delete your least desired option
+                            <strong>Step 2</strong> - Your turn Player 2! Eliminate your least desired option by clicking the trash can below its image.
                         </p>
                         <p>
-                            <strong>Repeat</strong> until all options have been filtered
-                        </p>
+                            <strong>Step 3</strong> - Repeat!                        </p>
                     </div>
                     <div className="choose-one">
                         <div className="food-choice">
