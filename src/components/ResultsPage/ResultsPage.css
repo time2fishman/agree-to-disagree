@@ -97,3 +97,8 @@
 .play-again a:active {
     color: #c16f03c0;
 }
+
+.dark-mode   .Option-name {
+    background-color: black;
+    color: white
+}
