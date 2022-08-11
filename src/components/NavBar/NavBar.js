@@ -3,12 +3,21 @@ import { AppContext } from "../../AppContext";
 import handShake from "../../images/handShake.png";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const NavBar = () => {
   const { navBarVisible } = useContext(AppContext);
+  const[isDarkMode, setIsDarkmode] = useState(() => false)
+  const [isActive, setActive] = useState(() => true);
+  
+  const toggleDarkMode = () => {
+    document.documentElement.classList.toggle("dark-mode");
+    setIsDarkmode(!isDarkMode)
+  }
 
-  const [isActive, setActive] = useState("false");
-
+  const checkMode = () => {
+    return isDarkMode
+  }
   const menuToggle = () => {
     setActive(!isActive);
   };
@@ -27,6 +36,12 @@ const NavBar = () => {
           <Link onClick={menuToggle} to="/about">
             <li>About</li>
           </Link>
+
+          <DarkModeToggle
+            onChange={toggleDarkMode}
+            checked={checkMode()}
+            size={80}
+            />
         </div>
       </div>
     </div>

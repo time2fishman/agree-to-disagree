@@ -77,7 +77,6 @@
 
 .Add-food-text-row {
     padding: 2px 0;
-    display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 10px 50px;
     width: 100%;
@@ -178,4 +177,9 @@
 .MainPage-main h3 {
     font-size: 20px;
     margin-bottom: 5px;
+}
+
+.dark-mode .Add-food-instructions, .dark-mode .Play-container {
+    background-color: black;
+    color: white
 }

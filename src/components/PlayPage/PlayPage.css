@@ -204,3 +204,13 @@
         bottom: 2vh;
     }
 }
+
+.dark-mode .info-box {
+    background-color: black;
+    color: white
+}
+
+.dark-mode .food-choice .Option-name {
+    background-color: black;
+    color: white
+}

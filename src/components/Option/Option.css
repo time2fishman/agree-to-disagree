@@ -84,3 +84,8 @@ img.Option-image {
         padding: 2px 0px;
     }
 }
+
+.dark-mode   .Option-name {
+    background-color: black;
+    color: white
+}
