@@ -28,6 +28,12 @@ const NavBar = () => {
         <img className="handShake-icon" src={handShake} alt="handshake icon" />
         <i className="menuBars-icon fa-solid fa-bars" onClick={menuToggle}></i>
       </div>
+      <DarkModeToggle
+            className='darkModeToggle'
+            onChange={toggleDarkMode}
+            checked={checkMode()}
+            size={75}
+            />
       <div className={isActive ? "hiddenMenu" : "dropFields"}>
         <div className="dropMenuContainer">
           <Link onClick={menuToggle} to="/home">
@@ -36,12 +42,6 @@ const NavBar = () => {
           <Link onClick={menuToggle} to="/about">
             <li>About</li>
           </Link>
-
-          <DarkModeToggle
-            onChange={toggleDarkMode}
-            checked={checkMode()}
-            size={80}
-            />
         </div>
       </div>
     </div>
