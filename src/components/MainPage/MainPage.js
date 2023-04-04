@@ -33,7 +33,7 @@ const MainPage = () => {
     const [addArrow, setAddArrow] = useState('down-triangle-closed')
 
     useEffect(() => {
-        axios.get('prj_Y6prWiS6W2k2D3RL5bCdLPUpay3v')
+        axios.get('https://agree-to-disagree-backend.vercel.app/foods')
             .then(response => {
                 setAxiosResults(response.data)
                 // console.log("fetch")
@@ -83,7 +83,7 @@ const MainPage = () => {
         if (search.length < 1 || cuisine.length < 1 || description.length < 1 || imageUrl < 1) {
             alert('Please fill out all boxes to proceed!')
         } else {
-            axios.post('prj_Y6prWiS6W2k2D3RL5bCdLPUpay3v', {
+            axios.post('https://agree-to-disagree-backend.vercel.app/foods', {
                 name: search,
                 image: imageUrl,
                 cuisine: cuisine,
