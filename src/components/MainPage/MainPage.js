@@ -33,10 +33,10 @@ const MainPage = () => {
     const [addArrow, setAddArrow] = useState('down-triangle-closed')
 
     useEffect(() => {
-        axios.get('agree-to-disagree-backend-skpurj4eg-time2fishman.vercel.app')
+        axios.get('prj_Y6prWiS6W2k2D3RL5bCdLPUpay3v')
             .then(response => {
                 setAxiosResults(response.data)
-                console.log("fetch")
+                // console.log("fetch")
             })
             .catch(console.error)
     }, [editModal])
@@ -83,7 +83,7 @@ const MainPage = () => {
         if (search.length < 1 || cuisine.length < 1 || description.length < 1 || imageUrl < 1) {
             alert('Please fill out all boxes to proceed!')
         } else {
-            axios.post('agree-to-disagree-backend-skpurj4eg-time2fishman.vercel.app', {
+            axios.post('prj_Y6prWiS6W2k2D3RL5bCdLPUpay3v', {
                 name: search,
                 image: imageUrl,
                 cuisine: cuisine,
